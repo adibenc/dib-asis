@@ -1,0 +1,18 @@
+# dev bookmark data
+# autocd
+
+composer dump-autoload
+php artisan serve
+php artisan route:list
+php artisan cache:clear
+php artisan db:seed
+php artisan db:seed --class=MerchantsSeeder
+php artisan db:seed --class=ProductsSeeder
+php artisan db:seed --class=UsersSeeder
+php artisan migrate
+php artisan migrate:fresh
+php artisan migrate:rollback
+php artisan config:clear
+php artisan view:clear
+sudo chmod 755 *
+sudo chmod 755 * -R

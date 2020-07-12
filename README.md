@@ -1,2 +1,3 @@
-# dib-asis
-adib assistant
+# dib-bot
+
+my assistant
