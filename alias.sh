@@ -35,6 +35,18 @@ alias lamst="sudo /opt/lampp/lampp start"
 alias lamrst="sudo /opt/lampp/lampp restart"
 
 #functions / oneliner
+function random(){
+	tr -cd \"[:digit:]\" < /dev/urandom | head -c 16
+}
+
+function randint(){
+	echo $(($(random) % $1))
+}
+
+function fileline(){
+	cat $1 | head -n $2 | tail -n 1
+}
+
 function getTodo(){
 	for i in $(find .) ; do echo $i; cat $i | grep -in "to do" ; done;
 }

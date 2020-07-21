@@ -1,5 +1,6 @@
 geany $__bmfile1
 cd /
+cd /media/data3/projects/sinfra
 cd /media/data3/projects/inagata
 cd /opt/lampp/htdocs/dinsos
 cd /media/data3/projects/blinjo
@@ -13,4 +14,3 @@ cd /media/data3/projects/pulpenmas
 cd /media/data3/projects/mmasjid/smasjid-laravel
 cd /media/data3/projects/pythons/dib-textrank
 cd /media/data1/Documents/lyrics
-

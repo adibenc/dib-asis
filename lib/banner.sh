@@ -6,9 +6,15 @@ function todo(){
 	if [ ! -f $todofile ] ; then
 		echo \todo today  > $todofile
 	fi
-	
+	echo
+	echo "this is the todo list, sir.."
+	echo
 	echo "todo today ("$(wc -l $todofile)")"
 	cat $todofile
+}
+
+function quote(){
+	echo "We work at the dark to serve the light"
 }
 
 function todo-edit(){
@@ -18,7 +24,7 @@ function todo-edit(){
 function dib-banner(){
 	date
 	echo $separator
-	echo "buss lang buss resr buss lang buss"
+	quote
 	echo $separator
 	todo
 	echo $separator
