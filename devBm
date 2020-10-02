@@ -1,8 +1,10 @@
 # dev bookmark data
-# autocd
 
+php artisan storage:link
 composer dump-autoload
 php artisan serve
+npm run watch
+php artisan queue:work --queue=listeners
 php artisan route:list
 php artisan cache:clear
 php artisan db:seed
@@ -16,3 +18,8 @@ php artisan config:clear
 php artisan view:clear
 sudo chmod 755 *
 sudo chmod 755 * -R
+
+php artisan queue:failed-table
+php artisan migrate
+php artisan queue:work redis --tries=3
+php artisan queue:work redis --tries=3 --delay=3

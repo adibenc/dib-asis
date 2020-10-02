@@ -12,6 +12,7 @@ alias p8="ping 8.8.8.8"
 alias p1="ping 1.1.1.1"
 alias telegram="/media/data3/Installsrc/4linux/telegram/Telegram"
 alias dibmanage="localc /media/data1/Documents/meschedule-g2.xlsx"
+alias ssh-addb="ssh-add /media/data3/projects/sysindo/deploy/dib.bitbucket"
 alias ssh-add-me="ssh-add ~/.ssh/dib.gitkey"
 alias ssh-add-github="ssh-add ~/.ssh/dib.githubkey"
 alias run-edu="~/run-edu"
@@ -28,6 +29,7 @@ alias phuml="/media/data3/projects/opensource/real.phuml/src/app/phuml"
 alias postman="cd /media/data3/Installsrc/Postman/ && ./Postman"
 alias phpunit="/opt/lampp/bin/phpunit"
 
+alias firefox="/media/data3/firefox/firefox"
 #jars
 
 #sudo required
@@ -76,6 +78,8 @@ function xBook(){
 #bookmark
 alias dcd="xBook dirBm"
 alias dev1="xBook devBm"
+alias dev2="xBook devBm2"
+alias stat1="xBook statBm"
 
 #sec
 alias rsactftool="python3 /media/data3/play/tools/RsaCtfTool/RsaCtfTool.py"
@@ -86,5 +90,5 @@ alias drand="python -c \"import random;print(random.randint(1,100))\""
 #exports
 #flutter & go
 export PATH="$PATH:/media/data3/flutter/bin\
-:/usr/local/go/bin"
+:/usr/local/go/bin:/media/data3/projects/tunnelroot"
 export ANDROID_HOME="/media/data3/Android/Sdk"

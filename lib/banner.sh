@@ -11,10 +11,12 @@ function todo(){
 	echo
 	echo "todo today ("$(wc -l $todofile)")"
 	cat $todofile
+	#python3 ~/dib-asis/python/indo.py
 }
 
 function quote(){
 	echo "We work at the dark to serve the light"
+	#Watashitachiha kurayaminonakade hataraki, hikari o teikyō shimasu
 }
 
 function todo-edit(){
