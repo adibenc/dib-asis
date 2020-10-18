@@ -13,8 +13,8 @@ alias p1="ping 1.1.1.1"
 alias telegram="/media/data3/Installsrc/4linux/telegram/Telegram"
 alias dibmanage="localc /media/data1/Documents/meschedule-g2.xlsx"
 alias ssh-addb="ssh-add /media/data3/projects/sysindo/deploy/dib.bitbucket"
-alias ssh-add-me="ssh-add ~/.ssh/dib.gitkey"
-alias ssh-add-github="ssh-add ~/.ssh/dib.githubkey"
+alias ssh-addme="ssh-add ~/.ssh/dib.gitkey"
+alias ssh-addgh="ssh-add ~/.ssh/dib.githubkey"
 alias run-edu="~/run-edu"
 
 alias firebase="/media/data3/Installsrc/4linux/firebase-tools-linux"
@@ -30,6 +30,8 @@ alias postman="cd /media/data3/Installsrc/Postman/ && ./Postman"
 alias phpunit="/opt/lampp/bin/phpunit"
 
 alias firefox="/media/data3/firefox/firefox"
+alias apktool="java -jar /media/data3/play/tools/apktool_2.3.4.jar"
+alias dex2jar="/media/data3/play/tools/t.revxbinexp/dex2jar-2.0/d2j-dex2jar.sh"
 #jars
 
 #sudo required
@@ -63,6 +65,16 @@ function getCiFuncs(){
 
 function getImplement(){
 	for i in $(find .) ; do echo $i; cat $i | grep -in implement ; done;
+}
+
+function gitgetchange(){
+	#cp to dummy then upload
+	git diff --name-only HEAD $1
+}
+
+function gitdummy(){
+	#cp to dummy then upload
+	for i in $(cat dummy1);do mkdir -p "dummy/`dirname $i`"; cp -v $i dummy/$i; done
 }
 
 # cmds bookmark file access n run

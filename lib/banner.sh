@@ -6,9 +6,9 @@ function todo(){
 	if [ ! -f $todofile ] ; then
 		echo \todo today  > $todofile
 	fi
-	echo
+	echo "f0:03:8c:76:5e:cb"
 	echo "this is the todo list, sir.."
-	echo
+	echo 
 	echo "todo today ("$(wc -l $todofile)")"
 	cat $todofile
 	#python3 ~/dib-asis/python/indo.py
