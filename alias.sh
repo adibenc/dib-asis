@@ -31,7 +31,8 @@ alias phpunit="/opt/lampp/bin/phpunit"
 
 alias firefox="/media/data3/firefox/firefox"
 alias apktool="java -jar /media/data3/play/tools/apktool_2.3.4.jar"
-alias dex2jar="/media/data3/play/tools/t.revxbinexp/dex2jar-2.0/d2j-dex2jar.sh"
+alias dex2jar="/media/data3/play/tools/revxbinexp/dex2jar-2.0/d2j-dex2jar.sh"
+alias cutter="/media/data3/play/tools/revxbinexp/Cutter-v1.12.0-x64.Linux.AppImage"
 #jars
 
 #sudo required
@@ -74,7 +75,7 @@ function gitgetchange(){
 
 function gitdummy(){
 	#cp to dummy then upload
-	for i in $(cat dummy1);do mkdir -p "dummy/`dirname $i`"; cp -v $i dummy/$i; done
+	for i in $(cat $1);do mkdir -p "dummy/`dirname $i`"; cp -v $i dummy/$i; done
 }
 
 # cmds bookmark file access n run
@@ -87,6 +88,10 @@ function xBook(){
 	$(cat $__dir/$1 | head -n $in1 | tail -n 1)
 }
 
+function nmclis(){
+	nmcli device show wlp1s0
+}
+
 #bookmark
 alias dcd="xBook dirBm"
 alias dev1="xBook devBm"
@@ -96,11 +101,19 @@ alias stat1="xBook statBm"
 #sec
 alias rsactftool="python3 /media/data3/play/tools/RsaCtfTool/RsaCtfTool.py"
 alias stegsolve="java -jar /media/data3/play/tools/stegsolve.jar"
-alias ida6="cd /media/data2/Program\ Files/IDA\ 6.6 && winefile"
+#alias ida6="cd /media/data2/Program\ Files/IDA\ 6.6 && winefile"
+alias ida6="cd /media/data2/IDA\ 6.6 && winefile"
 alias drand="python -c \"import random;print(random.randint(1,100))\""
-
+alias phpunit="./../../vendor/bin/phpunit"
 #exports
 #flutter & go
 export PATH="$PATH:/media/data3/flutter/bin\
 :/usr/local/go/bin:/media/data3/projects/tunnelroot"
+export PATH="./../../vendor/bin:./vendor/bin:$PATH"
 export ANDROID_HOME="/media/data3/Android/Sdk"
+
+function insss(){
+sudo apt-get install libgmp-dev
+sudo apt-get install libmpfr-dev
+sudo apt-get install libmpc-dev
+}
