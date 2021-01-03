@@ -12,7 +12,7 @@ alias p8="ping 8.8.8.8"
 alias p1="ping 1.1.1.1"
 alias telegram="/media/data3/Installsrc/4linux/telegram/Telegram"
 alias dibmanage="localc /media/data1/Documents/meschedule-g2.xlsx"
-alias ssh-addb="ssh-add /media/data3/projects/sysindo/deploy/dib.bitbucket"
+alias ssh-addb="ssh-add /media/data3/projects/si/deploy/dib.bitbucket"
 alias ssh-addme="ssh-add ~/.ssh/dib.gitkey"
 alias ssh-addgh="ssh-add ~/.ssh/dib.githubkey"
 alias run-edu="~/run-edu"
@@ -93,10 +93,10 @@ function nmclis(){
 }
 
 #bookmark
-alias dcd="xBook dirBm"
-alias dev1="xBook devBm"
-alias dev2="xBook devBm2"
-alias stat1="xBook statBm"
+alias dcd="xBook secretdirBm"
+alias dev1="xBook secretdevBm"
+alias dev2="xBook secretdevBm2"
+alias stat1="xBook secretstatBm"
 
 #sec
 alias rsactftool="python3 /media/data3/play/tools/RsaCtfTool/RsaCtfTool.py"
@@ -105,6 +105,7 @@ alias stegsolve="java -jar /media/data3/play/tools/stegsolve.jar"
 alias ida6="cd /media/data2/IDA\ 6.6 && winefile"
 alias drand="python -c \"import random;print(random.randint(1,100))\""
 alias phpunit="./../../vendor/bin/phpunit"
+alias sshkey="ssh-keygen"
 #exports
 #flutter & go
 export PATH="$PATH:/media/data3/flutter/bin\
@@ -117,3 +118,10 @@ sudo apt-get install libgmp-dev
 sudo apt-get install libmpfr-dev
 sudo apt-get install libmpc-dev
 }
+
+
+#set ssh client timout
+#/etc/ssh/ssh_config and set directive ServerAliveInterval to a value like 100:
+
+# other configs
+#ServerAliveInterval 100

@@ -1,6 +1,0 @@
-# stat bookmark data
-
-php artisan route:list
-php artisan route:list | grep api
-php artisan route:list | grep api. | tee scripts/apisss
-cut -c10-70 scripts/apisss
