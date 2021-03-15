@@ -30,3 +30,4 @@ source $__lib/dpkg-backup.sh
 source $__lib/banner.sh
 
 dib-banner
+figlet hello

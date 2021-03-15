@@ -6,7 +6,7 @@ function todo(){
 	if [ ! -f $todofile ] ; then
 		echo \todo today  > $todofile
 	fi
-	echo "f0:03:8c:76:5e:cb"
+	#echo "f0:03:8c:76:5e:cb"
 	echo "this is the todo list, sir.."
 	echo 
 	echo "todo today ("$(wc -l $todofile)")"

@@ -20,8 +20,8 @@ alias run-edu="~/run-edu"
 alias firebase="/media/data3/Installsrc/4linux/firebase-tools-linux"
 
 # override / make nickname sys binaries
-alias npm="/media/data3/Installsrc/4linux/node-v12.16.1-linux-x64/bin/npm"
-alias node="/media/data3/Installsrc/4linux/node-v12.16.1-linux-x64/bin/node"
+alias npm="/media/data3/Installsrc/4linux/node-v14.15.4-linux-x64/bin/npm"
+alias node="/media/data3/Installsrc/4linux/node-v14.15.4-linux-x64/bin/node"
 alias mysql="/opt/lampp/bin/mysql"
 alias mysqldump="/opt/lampp/bin/mysqldump"
 
@@ -92,11 +92,28 @@ function nmclis(){
 	nmcli device show wlp1s0
 }
 
+function baseStat(){
+	echo "================================================================"
+	logfile=$1
+	echo $logfile
+	echo "base log"
+	cat $logfile | wc
+	#return logfile
+}
+
+function findx(){
+	echo "for f in \$\(find); do baseStat $f;done"
+}
+
 #bookmark
 alias dcd="xBook secretdirBm"
+alias dcd2="xBook secretdirBm2"
 alias dev1="xBook secretdevBm"
 alias dev2="xBook secretdevBm2"
+alias dev3="xBook secretdevBm3"
 alias stat1="xBook secretstatBm"
+alias dib="xBook secretDibBm"
+#alias stat1="baseStat"
 
 #sec
 alias rsactftool="python3 /media/data3/play/tools/RsaCtfTool/RsaCtfTool.py"
@@ -109,7 +126,9 @@ alias sshkey="ssh-keygen"
 #exports
 #flutter & go
 export PATH="$PATH:/media/data3/flutter/bin\
-:/usr/local/go/bin:/media/data3/projects/tunnelroot"
+:/usr/local/go/bin:/media/data3/projects/tunnelroot\
+:/media/data3/Installsrc/4linux/node-v14.15.4-linux-x64/bin"
+# :/media/data3/Installsrc/4linux/node-v14.15.4-linux-x64/bin
 export PATH="./../../vendor/bin:./vendor/bin:$PATH"
 export ANDROID_HOME="/media/data3/Android/Sdk"
 
@@ -117,6 +136,14 @@ function insss(){
 sudo apt-get install libgmp-dev
 sudo apt-get install libmpfr-dev
 sudo apt-get install libmpc-dev
+}
+
+function runayo(){
+	lamst
+	echo 2 | dcd
+	#echo 7 | dev1
+	#echo 8 | dev1
+	#scrcpy
 }
 
 
