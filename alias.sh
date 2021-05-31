@@ -1,3 +1,4 @@
+# 39358083848620420
 #aliases
 #echo "aliases"
 #echo $__dir
@@ -12,7 +13,7 @@ alias p8="ping 8.8.8.8"
 alias p1="ping 1.1.1.1"
 alias telegram="/media/data3/Installsrc/4linux/telegram/Telegram"
 alias dibmanage="localc /media/data1/Documents/meschedule-g2.xlsx"
-alias ssh-addb="ssh-add /media/data3/projects/si/deploy/dib.bitbucket"
+alias ssh-addb="ssh-add /media/data1/project1/si/deploy/dib.bitbucket"
 alias ssh-addme="ssh-add ~/.ssh/dib.gitkey"
 alias ssh-addgh="ssh-add ~/.ssh/dib.githubkey"
 alias run-edu="~/run-edu"
@@ -38,6 +39,7 @@ alias cutter="/media/data3/play/tools/revxbinexp/Cutter-v1.12.0-x64.Linux.AppIma
 #sudo required
 alias lamst="sudo /opt/lampp/lampp start"
 alias lamrst="sudo /opt/lampp/lampp restart"
+alias lamstop="sudo /opt/lampp/lampp stop"
 
 #functions / oneliner
 function random(){
@@ -105,12 +107,31 @@ function findx(){
 	echo "for f in \$\(find); do baseStat $f;done"
 }
 
+function initConda(){
+__conda_setup="$('/home/zam/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/zam/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/zam/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/zam/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+}
+
+#initConda
+
 #bookmark
 alias dcd="xBook secretdirBm"
 alias dcd2="xBook secretdirBm2"
 alias dev1="xBook secretdevBm"
 alias dev2="xBook secretdevBm2"
 alias dev3="xBook secretdevBm3"
+alias dev4="xBook secretdevBm4"
+alias dev5="sudo xBook secretdevBm5"
+alias srv1="xBook secretsrvBm1"
 alias stat1="xBook secretstatBm"
 alias dib="xBook secretDibBm"
 #alias stat1="baseStat"
