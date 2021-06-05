@@ -24,6 +24,7 @@ __result=$__dir"/result"
 
 source $__dir/alias.sh
 source $__dir/bookmark.sh
+source $__dir/secret.sh
 
 #libs
 source $__lib/dpkg-backup.sh

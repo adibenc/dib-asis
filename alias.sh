@@ -5,6 +5,8 @@
 
 # dib-bot aliases
 alias dflush="sudo rm -rf $__dir/result/* && sudo rm -rf $__dir/temp/*"
+alias als="geany /home/zam/dib-asis/alias.sh"
+alias main1="geany /home/zam/dib-asis/main.sh"
 
 #aliases
 alias filez="cd /media/data3/Installsrc/4linux/FileZilla3/bin && ./filezilla"
@@ -17,7 +19,7 @@ alias ssh-addb="ssh-add /media/data1/project1/si/deploy/dib.bitbucket"
 alias ssh-addme="ssh-add ~/.ssh/dib.gitkey"
 alias ssh-addgh="ssh-add ~/.ssh/dib.githubkey"
 alias run-edu="~/run-edu"
-
+alias hl10="history | tail -n 10"
 alias firebase="/media/data3/Installsrc/4linux/firebase-tools-linux"
 
 # override / make nickname sys binaries
@@ -34,6 +36,7 @@ alias firefox="/media/data3/firefox/firefox"
 alias apktool="java -jar /media/data3/play/tools/apktool_2.3.4.jar"
 alias dex2jar="/media/data3/play/tools/revxbinexp/dex2jar-2.0/d2j-dex2jar.sh"
 alias cutter="/media/data3/play/tools/revxbinexp/Cutter-v1.12.0-x64.Linux.AppImage"
+alias composer="/usr/local/bin/composer"
 #jars
 
 #sudo required
@@ -130,8 +133,8 @@ alias dev1="xBook secretdevBm"
 alias dev2="xBook secretdevBm2"
 alias dev3="xBook secretdevBm3"
 alias dev4="xBook secretdevBm4"
-alias dev5="sudo xBook secretdevBm5"
-alias srv1="xBook secretsrvBm1"
+alias dev5="xBook secretdevBm5"
+alias sev="xBook secretsrvBm1"
 alias sp="xBook secretSnipBm1"
 alias stat1="xBook secretstatBm"
 alias dib="xBook secretDibBm"
