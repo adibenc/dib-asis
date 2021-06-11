@@ -7,6 +7,8 @@
 alias dflush="sudo rm -rf $__dir/result/* && sudo rm -rf $__dir/temp/*"
 alias als="geany /home/zam/dib-asis/alias.sh"
 alias main1="geany /home/zam/dib-asis/main.sh"
+alias reinit="source ~/dib-asis/main.sh"
+alias codeasis="code ~/dib-asis/"
 
 #aliases
 alias filez="cd /media/data3/Installsrc/4linux/FileZilla3/bin && ./filezilla"
@@ -85,12 +87,12 @@ function gitdummy(){
 
 # cmds bookmark file access n run
 function xBook(){
-	cat -n $__dir/$1
+	cat -n $1
 	echo -ne "input >"
 	read in1
-	cmd1=`cat $__dir/$1 | head -n $in1 | tail -n 1`
+	cmd1=`cat $1 | head -n $in1 | tail -n 1`
 	echo $in1" - "$cmd1
-	$(cat $__dir/$1 | head -n $in1 | tail -n 1)
+	$(cat $1 | head -n $in1 | tail -n 1)
 }
 
 function nmclis(){
@@ -126,18 +128,21 @@ unset __conda_setup
 
 #initConda
 
+__secret=$__dir"/secrets"
 #bookmark
-alias dcd="xBook secretdirBm"
-alias dcd2="xBook secretdirBm2"
-alias dev1="xBook secretdevBm"
-alias dev2="xBook secretdevBm2"
-alias dev3="xBook secretdevBm3"
-alias dev4="xBook secretdevBm4"
-alias dev5="xBook secretdevBm5"
-alias sev="xBook secretsrvBm1"
-alias sp="xBook secretSnipBm1"
-alias stat1="xBook secretstatBm"
-alias dib="xBook secretDibBm"
+alias dcd="xBook $__secret/secretdirBm"
+alias dcd2="xBook $__secret/secretdirBm2"
+alias dev1="xBook $__secret/secretdevBm"
+alias dev2="xBook $__secret/secretdevBm2"
+alias dev3="xBook $__secret/secretdevBm3"
+alias dev4="xBook $__secret/secretdevBm4"
+alias dev5="xBook $__secret/secretdevBm5"
+alias sev="xBook $__secret/secretsrvBm1"
+alias enc="xBook $__secret/secretenc"
+alias kong="xBook $__secret/secretkongBm"
+alias sdd="xBook $__secret/secretSnipBm1"
+alias stat1="xBook $__secret/secretstatBm"
+alias dib="xBook $__secret/secretDibBm"
 #alias stat1="baseStat"
 
 #sec
