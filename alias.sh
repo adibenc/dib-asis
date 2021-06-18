@@ -143,6 +143,7 @@ alias kong="xBook $__secret/secretkongBm"
 alias sdd="xBook $__secret/secretSnipBm1"
 alias stat1="xBook $__secret/secretstatBm"
 alias dib="xBook $__secret/secretDibBm"
+alias mapid="cat $__dir/lib/id"
 #alias stat1="baseStat"
 
 #sec
@@ -161,21 +162,6 @@ export PATH="$PATH:/media/data3/flutter/bin\
 # :/media/data3/Installsrc/4linux/node-v14.15.4-linux-x64/bin
 export PATH="./../../vendor/bin:./vendor/bin:$PATH"
 export ANDROID_HOME="/media/data3/Android/Sdk"
-
-function insss(){
-sudo apt-get install libgmp-dev
-sudo apt-get install libmpfr-dev
-sudo apt-get install libmpc-dev
-}
-
-function runayo(){
-	lamst
-	echo 2 | dcd
-	#echo 7 | dev1
-	#echo 8 | dev1
-	#scrcpy
-}
-
 
 #set ssh client timout
 #/etc/ssh/ssh_config and set directive ServerAliveInterval to a value like 100:

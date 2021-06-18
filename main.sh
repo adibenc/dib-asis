@@ -30,5 +30,5 @@ source $__dir/secret.sh
 source $__lib/dpkg-backup.sh
 source $__lib/banner.sh
 
-dib-banner
-
+# dib-banner
+mapid
