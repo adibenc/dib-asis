@@ -23,6 +23,8 @@ alias ssh-addgh="ssh-add ~/.ssh/dib.githubkey"
 alias run-edu="~/run-edu"
 alias hl10="history | tail -n 10"
 alias firebase="/media/data3/Installsrc/4linux/firebase-tools-linux"
+alias gp="git push"
+alias gpu="git pull"
 
 # override / make nickname sys binaries
 alias npm="/media/data3/Installsrc/4linux/node-v14.15.4-linux-x64/bin/npm"
@@ -59,6 +61,10 @@ function fileline(){
 	cat $1 | head -n $2 | tail -n 1
 }
 
+function linerange(){
+	cat $1 | head -$2 | tail +$3
+}
+
 function getTodo(){
 	for i in $(find .) ; do echo $i; cat $i | grep -in "to do" ; done;
 }
@@ -92,7 +98,8 @@ function xBook(){
 	read in1
 	cmd1=`cat $1 | head -n $in1 | tail -n 1`
 	echo $in1" - "$cmd1
-	$(cat $1 | head -n $in1 | tail -n 1)
+	# $(cat $1 | head -n $in1 | tail -n 1)
+	$cmd1
 }
 
 function nmclis(){
@@ -130,7 +137,7 @@ unset __conda_setup
 
 __secret=$__dir"/secrets"
 #bookmark
-alias dcd="xBook $__secret/secretdirBm"
+alias dcd="xBook $__secret/dirBm"
 alias dcd2="xBook $__secret/secretdirBm2"
 alias dev1="xBook $__secret/secretdevBm"
 alias dev2="xBook $__secret/secretdevBm2"
@@ -143,6 +150,8 @@ alias kong="xBook $__secret/secretkongBm"
 alias sdd="xBook $__secret/secretSnipBm1"
 alias stat1="xBook $__secret/secretstatBm"
 alias dib="xBook $__secret/secretDibBm"
+alias codes="xBook $__secret/codes"
+alias medias="xBook $__secret/medias"
 alias mapid="cat $__dir/lib/id"
 #alias stat1="baseStat"
 

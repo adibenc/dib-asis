@@ -3,7 +3,7 @@
 # https://kvz.io/bash-best-practices.html
 # main entry 
 
-# include this to .bash_rc
+# include this to .bashrc
 # source ~/dib/main.sh
 
 echo "dib-bot init"
@@ -30,5 +30,5 @@ source $__dir/secret.sh
 source $__lib/dpkg-backup.sh
 source $__lib/banner.sh
 
-# dib-banner
-mapid
+dib-banner
+#mapid
