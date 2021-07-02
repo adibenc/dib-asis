@@ -25,6 +25,7 @@ alias hl10="history | tail -n 10"
 alias firebase="/media/data3/Installsrc/4linux/firebase-tools-linux"
 alias gp="git push"
 alias gpu="git pull"
+alias dcn="curl https://dict.cn/$1 | head -n 200 | tail -n 100"
 
 # override / make nickname sys binaries
 alias npm="/media/data3/Installsrc/4linux/node-v14.15.4-linux-x64/bin/npm"
@@ -164,14 +165,6 @@ alias ida6="cd /media/data2/IDA\ 6.6 && winefile"
 alias drand="python -c \"import random;print(random.randint(1,100))\""
 alias phpunit="./../../vendor/bin/phpunit"
 alias sshkey="ssh-keygen"
-#exports
-#flutter & go
-export PATH="$PATH:/media/data3/flutter/bin\
-:/usr/local/go/bin:/media/data3/projects/tunnelroot\
-:/media/data3/Installsrc/4linux/node-v14.15.4-linux-x64/bin"
-# :/media/data3/Installsrc/4linux/node-v14.15.4-linux-x64/bin
-export PATH="./../../vendor/bin:./vendor/bin:$PATH"
-export ANDROID_HOME="/media/data3/Android/Sdk"
 
 #set ssh client timout
 #/etc/ssh/ssh_config and set directive ServerAliveInterval to a value like 100:

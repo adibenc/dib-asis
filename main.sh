@@ -25,10 +25,14 @@ __result=$__dir"/result"
 source $__dir/alias.sh
 source $__dir/bookmark.sh
 source $__dir/secret.sh
+source $__dir/exports.sh
 
 #libs
 source $__lib/dpkg-backup.sh
 source $__lib/banner.sh
 
-dib-banner
 #mapid
+dib-banner
+
+echo $separator
+show-daily-zn
