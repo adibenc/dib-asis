@@ -40,6 +40,7 @@ alias apktool="java -jar /media/data3/play/tools/apktool_2.3.4.jar"
 alias dex2jar="/media/data3/play/tools/revxbinexp/dex2jar-2.0/d2j-dex2jar.sh"
 alias cutter="/media/data3/play/tools/revxbinexp/Cutter-v1.12.0-x64.Linux.AppImage"
 alias composer="/usr/local/bin/composer"
+alias typora="/media/data3/Installsrc/4linux/Typora-linux-x64/bin/Typora-linux-x64/Typora"
 #jars
 
 #sudo required
