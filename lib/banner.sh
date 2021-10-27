@@ -25,6 +25,7 @@ function todo-edit(){
 
 function dib-banner(){
 	date
+	date +%Y%m%d
 	echo $separator
 	quote
 	echo $separator
