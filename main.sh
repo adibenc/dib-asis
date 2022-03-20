@@ -35,4 +35,4 @@ source $__lib/banner.sh
 dib-banner
 
 echo $separator
-show-daily-zn
+#show-daily-zn

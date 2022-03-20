@@ -98,6 +98,22 @@ function gitdummy(){
 	for i in $(cat $1);do mkdir -p "dummy/`dirname $i`"; cp -v $i dummy/$i; done
 }
 
+# 4 master
+function gsys(){
+	git checkout staging
+	git merge master
+	git push
+	git checkout master
+}
+
+# 4 main
+function gsym(){
+	git checkout staging
+	git merge main
+	git push
+	git checkout main
+}
+
 # cmds bookmark file access n run
 function xBook(){
 	cat -n $1
@@ -163,6 +179,7 @@ alias sdd="xBook $__secret/secretSnipBm1"
 alias stat1="xBook $__secret/secretstatBm"
 alias dib="xBook $__secret/secretDibBm"
 alias codes="xBook $__secret/codes"
+alias app="xBook $__secret/app"
 alias medias="xBook $__secret/medias"
 alias mapid="cat $__dir/lib/id"
 #alias stat1="baseStat"
