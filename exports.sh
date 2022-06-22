@@ -8,3 +8,7 @@ export PATH="$PATH:/media/data3/flutter/bin\
 export PATH="./../../vendor/bin:./vendor/bin:$PATH"
 export ANDROID_HOME="/media/data3/Android/Sdk"
 export GOPATH="$HOME/go"
+
+# override previous java
+export JAVA_HOME=/media/data1/installs/4linux/jdk-11
+export PATH=$PATH:$JAVA_HOME/bin

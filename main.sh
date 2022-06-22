@@ -34,5 +34,7 @@ source $__lib/banner.sh
 #mapid
 dib-banner
 
+GIT_UNSAFE_IGNORE_OWNERS=zam
+
 echo $separator
 #show-daily-zn

@@ -114,6 +114,17 @@ function gsym(){
 	git checkout main
 }
 
+# main to staging
+# gmr main staging
+# dev to main 
+# gmr dev main
+function gmr(){
+	git checkout $2
+	git merge $1
+	git push
+	git checkout $1
+}
+
 # cmds bookmark file access n run
 function xBook(){
 	cat -n $1
@@ -183,6 +194,10 @@ alias app="xBook $__secret/app"
 alias medias="xBook $__secret/medias"
 alias mapid="cat $__dir/lib/id"
 #alias stat1="baseStat"
+
+alias tdcd="xBook $__secret/tdir"
+alias tdev="xBook $__secret/tdev"
+alias tcodes="xBook $__secret/tcodes"
 
 #sec
 alias rsactftool="python3 /media/data3/play/tools/RsaCtfTool/RsaCtfTool.py"

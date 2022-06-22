@@ -1,7 +1,7 @@
 # banner v1
 
 separator="================================================================"
-todofile=~/todo
+todofile=~/todo.md
 function todo(){
 	if [ ! -f $todofile ] ; then
 		echo \todo today  > $todofile
@@ -26,6 +26,8 @@ function todo-edit(){
 function dib-banner(){
 	date
 	date +%Y%m%d
+	date +%Y-%m-%d-%H%M%S
+	date "+%Y-%m-%d %H:%M:%S"
 	echo $separator
 	quote
 	echo $separator
