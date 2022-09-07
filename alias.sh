@@ -207,6 +207,7 @@ alias ida6="cd /media/data2/IDA\ 6.6 && winefile"
 alias drand="python -c \"import random;print(random.randint(1,100))\""
 alias phpunit="./../../vendor/bin/phpunit"
 alias sshkey="ssh-keygen"
+alias installthemes="git clone https://github.com/Gogh-Co/Gogh.git gogh"
 
 #set ssh client timout
 #/etc/ssh/ssh_config and set directive ServerAliveInterval to a value like 100:
