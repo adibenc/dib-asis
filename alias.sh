@@ -172,7 +172,8 @@ unset __conda_setup
 __secret=$__dir"/secrets"
 #bookmark
 alias dcd="xBook $__secret/dirBm"
-alias dcd2="xBook $__secret/secretdirBm2"
+alias dcd2="xBook $__secret/dirBm2"
+alias ddo="xBook $__secret/ddo"
 alias dev1="xBook $__secret/dev1"
 alias dev2="xBook $__secret/dev2"
 alias dev3="xBook $__secret/dev3"
