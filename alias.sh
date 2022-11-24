@@ -136,6 +136,10 @@ function xBook(){
 	$cmd1
 }
 
+# function hcd(){
+	
+# }
+
 function nmclis(){
 	nmcli device show wlp1s0
 }
@@ -165,6 +169,23 @@ else
     fi
 fi
 unset __conda_setup
+}
+
+function initMconda(){
+	# >>> conda initialize >>>
+	# !! Contents within this block are managed by 'conda init' !!
+	__conda_setup="$('/home/zam/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+	if [ $? -eq 0 ]; then
+		eval "$__conda_setup"
+	else
+		if [ -f "/home/zam/miniconda3/etc/profile.d/conda.sh" ]; then
+			. "/home/zam/miniconda3/etc/profile.d/conda.sh"
+		else
+			export PATH="/home/zam/miniconda3/bin:$PATH"
+		fi
+	fi
+	unset __conda_setup
+	# <<< conda initialize <<<
 }
 
 #initConda
