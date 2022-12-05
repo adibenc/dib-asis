@@ -12,3 +12,6 @@ export GOPATH="$HOME/go"
 # override previous java
 export JAVA_HOME=/media/data1/installs/4linux/jdk-11
 export PATH=$PATH:$JAVA_HOME/bin
+
+# condas
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:/usr/local/cuda-11.4/lib64:/usr/lib/x86_64-linux-gnu/:/usr/local/cuda-11.1/targets/x86_64-linux/lib/
