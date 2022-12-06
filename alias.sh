@@ -217,6 +217,9 @@ alias medias="xBook $__secret/medias"
 alias mapid="cat $__dir/lib/id"
 #alias stat1="baseStat"
 
+alias tf1='python3 -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))"'
+alias tf2='python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices(\"GPU\"))"'
+
 alias tdcd="xBook $__secret/tdir"
 alias tdev="xBook $__secret/tdev"
 alias tcodes="xBook $__secret/tcodes"
