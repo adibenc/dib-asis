@@ -31,6 +31,7 @@ alias node="/media/data1/installs/4linux/node-v14.15.4-linux-x64/bin/node"
 alias mysql="/opt/lampp/bin/mysql"
 alias mysqldump="/opt/lampp/bin/mysqldump"
 
+alias php="/opt/lampp/bin/php"
 alias python="python2.7"
 alias py3="python3"
 alias r="R"
@@ -104,6 +105,13 @@ function gsys(){
 	git merge master
 	git push
 	git checkout master
+}
+
+function gdys(){
+	git checkout staging
+	git merge dev
+	git push
+	git checkout dev
 }
 
 # 4 main
@@ -202,6 +210,9 @@ alias dev4="xBook $__secret/dev4"
 alias dev5="xBook $__secret/dev5"
 alias dev="dev1"
 alias ai="xBook $__secret/ai"
+
+# toolbox
+alias tb1="xBook $__secret/tb1"
 
 alias game="xBook $__secret/play"
 alias sev="xBook $__secret/sev"
