@@ -26,8 +26,6 @@ alias dcn="curl https://dict.cn/$1 | head -n 200 | tail -n 100"
 
 # override / make nickname sys binaries
 alias cps="/usr/bin/composer"
-alias npm="/media/data1/installs/4linux/node-v14.15.4-linux-x64/bin/npm"
-alias node="/media/data1/installs/4linux/node-v14.15.4-linux-x64/bin/node"
 alias mysql="/opt/lampp/bin/mysql"
 alias mysqldump="/opt/lampp/bin/mysqldump"
 
