@@ -217,6 +217,10 @@ alias dev5="xBook $__secret/dev5"
 alias dev="dev1"
 alias ai="xBook $__secret/ai"
 
+# utils
+alias db="xBook $__secret/db"
+alias ut1="xBook $__secret/ut1"
+
 # toolbox
 alias tb1="xBook $__secret/tb1"
 
