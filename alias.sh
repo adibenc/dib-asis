@@ -220,6 +220,8 @@ alias ai="xBook $__secret/ai"
 # utils
 alias db="xBook $__secret/db"
 alias ut1="xBook $__secret/ut1"
+alias qq="xBook $__secret/ut1"
+alias ccx="xBook $__secret/ccx"
 
 # toolbox
 alias tb1="xBook $__secret/tb1"
