@@ -217,6 +217,13 @@ alias dev5="xBook $__secret/dev5"
 alias dev="dev1"
 alias ai="xBook $__secret/ai"
 
+# devops
+# leet yoo
+for i in $(seq 0 10);do
+	alias kb$i="xBook $__secret/kbs/kb$i"
+done;
+alias kubectl="minikube kubectl --"
+
 # utils
 alias db="xBook $__secret/db"
 alias ut1="xBook $__secret/ut1"
