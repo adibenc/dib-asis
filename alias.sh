@@ -2,6 +2,7 @@
 #aliases
 #echo "aliases"
 #echo $__dir
+echo "aliases"
 
 # dib-bot aliases
 alias dflush="sudo rm -rf $__dir/result/* && sudo rm -rf $__dir/temp/*"
@@ -31,7 +32,7 @@ alias node="/media/data1/installs/4linux/node-v14.15.4-linux-x64/bin/node"
 alias mysql="/opt/lampp/bin/mysql"
 alias mysqldump="/opt/lampp/bin/mysqldump"
 
-alias python="python2.7"
+# alias python="python2.7"
 alias py3="python3"
 alias r="R"
 alias rf="R -f "
@@ -172,7 +173,8 @@ unset __conda_setup
 __secret=$__dir"/secrets"
 #bookmark
 alias dcd="xBook $__secret/dirBm"
-alias dcd2="xBook $__secret/secretdirBm2"
+alias dcd2="xBook $__secret/dirBm2"
+alias dck="xBook $__secret/dck"
 alias dev1="xBook $__secret/dev1"
 alias dev2="xBook $__secret/dev2"
 alias dev3="xBook $__secret/dev3"
