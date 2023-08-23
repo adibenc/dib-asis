@@ -1,0 +1,1 @@
+initMconda && conda activate tf

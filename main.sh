@@ -40,6 +40,7 @@ source $__dir/exports.sh
 #libs
 source $__lib/dpkg-backup.sh
 source $__lib/banner.sh
+source $__lib/sl.sh
 
 #mapid
 dib-banner

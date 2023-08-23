@@ -27,12 +27,11 @@ alias dcn="curl https://dict.cn/$1 | head -n 200 | tail -n 100"
 
 # override / make nickname sys binaries
 alias cps="/usr/bin/composer"
-alias npm="/media/data1/installs/4linux/node-v14.15.4-linux-x64/bin/npm"
-alias node="/media/data1/installs/4linux/node-v14.15.4-linux-x64/bin/node"
 alias mysql="/opt/lampp/bin/mysql"
 alias mysqldump="/opt/lampp/bin/mysqldump"
 
-# alias python="python2.7"
+alias php="/opt/lampp/bin/php"
+alias python="python2.7"
 alias py3="python3"
 alias r="R"
 alias rf="R -f "
@@ -107,6 +106,13 @@ function gsys(){
 	git checkout master
 }
 
+function gdys(){
+	git checkout staging
+	git merge dev
+	git push
+	git checkout dev
+}
+
 # 4 main
 function gsym(){
 	git checkout staging
@@ -136,6 +142,10 @@ function xBook(){
 	# $(cat $1 | head -n $in1 | tail -n 1)
 	$cmd1
 }
+
+# function hcd(){
+	
+# }
 
 function nmclis(){
 	nmcli device show wlp1s0
@@ -168,13 +178,38 @@ fi
 unset __conda_setup
 }
 
+function initMconda(){
+	# >>> conda initialize >>>
+	# !! Contents within this block are managed by 'conda init' !!
+	__conda_setup="$('/home/zam/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+	if [ $? -eq 0 ]; then
+		eval "$__conda_setup"
+	else
+		if [ -f "/home/zam/miniconda3/etc/profile.d/conda.sh" ]; then
+			. "/home/zam/miniconda3/etc/profile.d/conda.sh"
+		else
+			export PATH="/home/zam/miniconda3/bin:$PATH"
+		fi
+	fi
+	unset __conda_setup
+	# <<< conda initialize <<<
+}
+
+# https://prefetch.net/blog/2020/07/14/decoding-json-web-tokens-jwts-from-the-linux-command-line/
+function jwtd() {
+    if [[ -x $(command -v jq) ]]; then
+         jq -R 'split(".") | .[0],.[1] | @base64d | fromjson' <<< "${1}"
+         echo "Signature: $(echo "${1}" | awk -F'.' '{print $3}')"
+    fi
+}
+
 #initConda
 
 __secret=$__dir"/secrets"
 #bookmark
 alias dcd="xBook $__secret/dirBm"
 alias dcd2="xBook $__secret/dirBm2"
-alias dck="xBook $__secret/dck"
+alias ddo="xBook $__secret/ddo"
 alias dev1="xBook $__secret/dev1"
 alias dev2="xBook $__secret/dev2"
 alias dev3="xBook $__secret/dev3"
@@ -182,6 +217,22 @@ alias dev4="xBook $__secret/dev4"
 alias dev5="xBook $__secret/dev5"
 alias dev="dev1"
 alias ai="xBook $__secret/ai"
+
+# devops
+# leet yoo
+for i in $(seq 0 10);do
+	alias kb$i="xBook $__secret/kbs/kb$i"
+done;
+alias kubectl="minikube kubectl --"
+
+# utils
+alias db="xBook $__secret/db"
+alias ut1="xBook $__secret/ut1"
+alias qq="xBook $__secret/ut1"
+alias ccx="xBook $__secret/ccx"
+
+# toolbox
+alias tb1="xBook $__secret/tb1"
 
 alias game="xBook $__secret/play"
 alias sev="xBook $__secret/sev"
@@ -196,6 +247,9 @@ alias app="xBook $__secret/app"
 alias medias="xBook $__secret/medias"
 alias mapid="cat $__dir/lib/id"
 #alias stat1="baseStat"
+
+alias tf1='python3 -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))"'
+alias tf2='python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices(\"GPU\"))"'
 
 alias tdcd="xBook $__secret/tdir"
 alias tdev="xBook $__secret/tdev"
