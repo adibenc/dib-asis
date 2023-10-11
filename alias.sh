@@ -24,6 +24,9 @@ alias gp="git push"
 alias gpu="git pull"
 alias dcn="curl https://dict.cn/$1 | head -n 200 | tail -n 100"
 
+# dir aliases
+__proj="/media/data1/project1"
+
 # override / make nickname sys binaries
 alias cps="/usr/bin/composer"
 alias mysql="/opt/lampp/bin/mysql"
@@ -38,6 +41,7 @@ alias rs="Rscript"
 alias phuml="/media/data3/projects/opensource/real.phuml/src/app/phuml"
 alias postman="cd /media/data1/installs/Postman && ./Postman"
 alias phpunit="/opt/lampp/bin/phpunit"
+alias ru3="rvm use 3.1.0"
 
 alias firefox="/media/data3/firefox/firefox"
 alias apktool="java -jar /media/data3/play/tools/apktool_2.3.4.jar"
