@@ -26,6 +26,9 @@ alias dcn="curl https://dict.cn/$1 | head -n 200 | tail -n 100"
 
 # dir aliases
 __proj="/media/data1/project1"
+__da_m1="/media/data1/"
+__da_m2="/media/data2/"
+__da_cx="/media/data1/confidential"
 
 # override / make nickname sys binaries
 alias cps="/usr/bin/composer"
