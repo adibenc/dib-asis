@@ -16,7 +16,7 @@ alias filez="cd /media/data3/Installsrc/4linux/FileZilla3/bin && ./filezilla"
 alias aptbersih="sudo apt-get clean"
 alias p8="ping 8.8.8.8"
 alias p1="ping 1.1.1.1"
-alias telegram="/media/data3/Installsrc/4linux/telegram/Telegram"
+alias telegram="/media/data1/installs/4linux/telegram/Telegram"
 alias dibmanage="localc /media/data1/Documents/meschedule-g2.xlsx"
 alias run-edu="~/run-edu"
 alias hl10="history | tail -n 10"
@@ -24,6 +24,12 @@ alias firebase="/media/data3/Installsrc/4linux/firebase-tools-linux"
 alias gp="git push"
 alias gpu="git pull"
 alias dcn="curl https://dict.cn/$1 | head -n 200 | tail -n 100"
+
+# dir aliases
+__proj="/media/data1/project1"
+__da_m1="/media/data1/"
+__da_m2="/media/data2/"
+__da_cx="/media/data1/confidential"
 
 # override / make nickname sys binaries
 alias cps="/usr/bin/composer"
@@ -39,13 +45,14 @@ alias rs="Rscript"
 alias phuml="/media/data3/projects/opensource/real.phuml/src/app/phuml"
 alias postman="cd /media/data1/installs/Postman && ./Postman"
 alias phpunit="/opt/lampp/bin/phpunit"
+alias ru3="rvm use 3.1.0"
 
 alias firefox="/media/data3/firefox/firefox"
 alias apktool="java -jar /media/data3/play/tools/apktool_2.3.4.jar"
 alias dex2jar="/media/data3/play/tools/revxbinexp/dex2jar-2.0/d2j-dex2jar.sh"
 alias cutter="/media/data3/play/tools/revxbinexp/Cutter-v1.12.0-x64.Linux.AppImage"
 # alias composer="/usr/local/bin/composer"
-alias composer="php ~/composer.phar"
+alias composer="php ~/dib-asis/lib/composer.phar"
 alias typora="/media/data1/installs/4linux/Typora-linux-x64/bin/Typora-linux-x64/Typora"
 alias yed="java -jar /media/data3/Installsrc/yEd-3.19.1.1/yed-3.19.1.1/yed.jar"
 #jars
@@ -209,14 +216,17 @@ __secret=$__dir"/secrets"
 #bookmark
 alias dcd="xBook $__secret/dirBm"
 alias dcd2="xBook $__secret/dirBm2"
+alias fee="xBook $__secret/_fee1"
 alias ddo="xBook $__secret/ddo"
 alias dev1="xBook $__secret/dev1"
 alias dev2="xBook $__secret/dev2"
 alias dev3="xBook $__secret/dev3"
 alias dev4="xBook $__secret/dev4"
 alias dev5="xBook $__secret/dev5"
+alias dr="xBook $__secret/dr"
 alias dev="dev1"
 alias ai="xBook $__secret/ai"
+alias tmx="xBook $__secret/scttmux"
 
 # devops
 # leet yoo
@@ -224,12 +234,14 @@ for i in $(seq 0 10);do
 	alias kb$i="xBook $__secret/kbs/kb$i"
 done;
 alias kubectl="minikube kubectl --"
+alias abx="xBook $__secret/abx"
 
 # utils
 alias db="xBook $__secret/db"
 alias ut1="xBook $__secret/ut1"
 alias qq="xBook $__secret/ut1"
 alias ccx="xBook $__secret/ccx"
+alias aux="xBook $__secret/aux"
 
 # toolbox
 alias tb1="xBook $__secret/tb1"
@@ -246,6 +258,8 @@ alias codes="xBook $__secret/codes"
 alias app="xBook $__secret/app"
 alias medias="xBook $__secret/medias"
 alias mapid="cat $__dir/lib/id"
+
+alias wiki="/media/data1/confidential/codes/wiki/w1.py"
 #alias stat1="baseStat"
 
 alias tf1='python3 -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))"'

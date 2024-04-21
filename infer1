@@ -1,0 +1,7 @@
+e < f
+f > g
+g = h
+f > h
+h > e
+
+e < g,h < f
