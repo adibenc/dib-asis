@@ -261,6 +261,7 @@ alias medias="xBook $__secret/medias"
 alias mapid="cat $__dir/lib/id"
 
 alias wiki="/media/data1/confidential/codes/wiki/w1.py"
+alias get-sv="$__lib/_get-sv.sh"
 #alias stat1="baseStat"
 
 alias tf1='python3 -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))"'
