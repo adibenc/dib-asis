@@ -23,6 +23,8 @@ alias firebase="/media/data3/binsrc/4linux/firebase-tools-linux"
 alias gp="git push"
 alias gpu="git pull"
 alias dcn="curl https://dict.cn/$1 | head -n 200 | tail -n 100"
+alias gwp="grep -inr 'wip\|todo' . > ./dummy/_todo.md"
+alias upp="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
 
 # dir aliases
 __proj="/media/data1/project1"

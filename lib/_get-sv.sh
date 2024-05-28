@@ -8,10 +8,10 @@
 major=0 # major release increment
 minor=5 # number of main features / modules
 
-source $PWD/mm.sh # override major & minor
-
 appname=app-name
 shorthead=$(git rev-parse --short HEAD)
+source $PWD/mm.sh # override major & minor
+
 git log > dmy-git-log
 # patch count by commit count
 patch=$(grep -in "    " dmy-git-log | wc -l)
