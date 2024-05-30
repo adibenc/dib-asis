@@ -14,7 +14,7 @@ source $PWD/mm.sh # override major & minor
 
 git log > dmy-git-log
 # patch count by commit count
-patch=$(grep -in "    " dmy-git-log | wc -l)
+patch=$(grep -in "    " dmy-git-log | grep -v "Merge" | wc -l)
 
 echo "semver: $appname"
 echo "$major.$minor.$patch $shorthead"

@@ -23,14 +23,30 @@ function todo-edit(){
 	gedit $todofile
 }
 
+# function dib-banner(){
+# 	date
+# 	date +%Y%m%d
+# 	date +%Y-%m-%d-%H%M%S
+# 	date "+%Y-%m-%d %H:%M:%S"
+# 	echo $separator
+# 	quote
+# 	echo $separator
+# 	todo
+# 	echo $separator
+# }
+
 function dib-banner(){
-	date
-	date +%Y%m%d
-	date +%Y-%m-%d-%H%M%S
-	date "+%Y-%m-%d %H:%M:%S"
-	echo $separator
-	quote
-	echo $separator
-	todo
-	echo $separator
+	local o
+	o+=$(date)"\n"
+	o+=$(date +%Y%m%d)"\n"
+	o+=$(date +%Y-%m-%d-%H%M%S)"\n"
+	o+=$(date "+%Y-%m-%d %H:%M:%S")"\n"
+	o+=$separator"\n"
+	o+=$(quote)"\n"
+	o+=$separator"\n"
+	o+=$(todo)"\n"
+	o+=$separator
+	
+	# echo -e "$output" | tte slide
+	echo -e "$o" | tte wipe
 }
