@@ -4,7 +4,8 @@ export PATH="$PATH:/media/data3/flutter/bin\
 :/usr/local/go/bin:/usr/bin/bin/:/media/data3/projects/tunnelroot\
 :/media/data1/bins/4linux/jre-8u311-linux-x64/jre1.8.0_311/bin\
 :/media/data1/bins/4linux/node-v20.11.0-linux-x64/bin\
-:/opt/lampp/bin:$GOPATH:$GOPATH/bin:$GOPATH/go/bin"
+:/opt/lampp/bin:$GOPATH:$GOPATH/bin:$GOPATH/go/bin\
+:/usr/bin/flutter/bin"
 # :/media/data1/bins/4linux/node-v18.15.0-linux-x64/bin
 # :/media/data3/binsrc/4linux/node-v14.15.4-linux-x64/bin
 export PATH="./../../vendor/bin:./vendor/bin:$PATH"
