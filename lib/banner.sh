@@ -48,5 +48,6 @@ function dib-banner(){
 	o+=$separator
 	
 	# echo -e "$output" | tte slide
-	echo -e "$o" | tte wipe
+	# echo -e "$o" | tte wipe
+	echo -e "$o" 
 }
