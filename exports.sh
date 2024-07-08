@@ -4,8 +4,7 @@
 export PATH="$PATH:/media/data3/flutter/bin\
 :/usr/local/go/bin:/usr/bin/bin/:/media/data3/projects/tunnelroot\
 :/media/data1/bins/4linux/node-v20.11.0-linux-x64/bin\
-:/opt/lampp/bin
-:$GOPATH:$GOPATH/bin:$GOPATH/go/bin\
+:/opt/lampp/bin:$GOPATH/bin:$GOPATH/go/bin\
 :/usr/local/android-studio/bin\
 :/media/data2/links/Android/Sdk/cmdline-tools/bin\
 :/media/data2/links/Android/Sdk/cmdline-tools/latest/bin\

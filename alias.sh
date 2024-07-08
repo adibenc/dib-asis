@@ -33,7 +33,7 @@ __da_m2="/media/data2/"
 __da_cx="/media/data1/confidential"
 
 # override / make nickname sys binaries
-alias cps="/usr/bin/composer"
+# alias cps="/usr/bin/composer"
 alias mysql="/opt/lampp/bin/mysql"
 alias mysqldump="/opt/lampp/bin/mysqldump"
 
@@ -53,10 +53,11 @@ alias apktool="java -jar /media/data3/play/tools/apktool_2.3.4.jar"
 alias dex2jar="/media/data3/play/tools/revxbinexp/dex2jar-2.0/d2j-dex2jar.sh"
 alias cutter="/media/data3/play/tools/revxbinexp/Cutter-v1.12.0-x64.Linux.AppImage"
 # alias composer="/usr/local/bin/composer"
-alias composer="php ~/dib-asis/lib/composer.phar"
+# alias composer="php ~/dib-asis/lib/composer.phar"
 alias typora="/media/data1/bins/4linux/Typora-linux-x64/bin/Typora-linux-x64/Typora"
 alias yed="java -jar /media/data3/binsrc/yEd-3.19.1.1/yed-3.19.1.1/yed.jar"
 #jars
+alias stman="/media/data1/project1/ssh-tunnel-manager/ssh-tunnel-manager.sh"
 
 #sudo required
 alias lamst="sudo /opt/lampp/lampp start"
@@ -275,6 +276,9 @@ alias tf2='python3 -c "import tensorflow as tf; print(tf.config.list_physical_de
 alias tdcd="xBook $__secret/tdir"
 alias tdev="xBook $__secret/tdev"
 alias tcodes="xBook $__secret/tcodes"
+
+# mount dib veracrypt drives
+alias mvc="/media/data1/project1/server-things/dib01/_enc/vc-select.sh"
 
 #sec
 alias rsactftool="python3 /media/data3/play/tools/RsaCtfTool/RsaCtfTool.py"
