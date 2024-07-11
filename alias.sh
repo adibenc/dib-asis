@@ -214,6 +214,7 @@ function jwtd() {
     fi
 }
 
+alias sync-ci4="$__dir/lib/_sync-ci4.sh"
 #initConda
 
 __secret=$__dir"/secrets"
@@ -276,6 +277,7 @@ alias tf2='python3 -c "import tensorflow as tf; print(tf.config.list_physical_de
 alias tdcd="xBook $__secret/tdir"
 alias tdev="xBook $__secret/tdev"
 alias tcodes="xBook $__secret/tcodes"
+alias bsar="xBook $__secret/bmSar"
 
 # mount dib veracrypt drives
 alias mvc="/media/data1/project1/server-things/dib01/_enc/vc-select.sh"
