@@ -16,5 +16,7 @@ git log > dmy-git-log
 # patch count by commit count
 patch=$(grep -in "    " dmy-git-log | grep -v "Merge" | wc -l)
 
-echo "semver: $appname"
+if [ $1 -eq "1" ];then
+	echo "semver: $appname"
+fi
 echo "$major.$minor.$patch $shorthead"

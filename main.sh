@@ -31,6 +31,8 @@ source $__dir/exports.sh
 source $__lib/dpkg-backup.sh
 source $__lib/banner.sh
 source $__lib/sl.sh
+source $__lib/_builder.sh
+source $__lib/_sync1.sh
 
 #mapid
 dib-banner
