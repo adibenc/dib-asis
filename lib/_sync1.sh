@@ -15,6 +15,6 @@ function sync1(){
 	cp $dir1/x_edatun\ node.postman_collection.json $dir1/$ssv1-edatun\ node.postman_collection.json
 	ls -lah $dir1
 	# 
-	ssh root@103.13.206.222 "rm -f /home/adib/drop/public/68616c6f/*"
+	ssh -i $pk root@103.13.206.222 "rm -f /home/adib/drop/public/68616c6f/*"
 	rsync -a -logt --info=progress2 -e "ssh -i $pk" /home/zam/drop/public/68616c6f/ root@103.13.206.222:/home/adib/drop/public/68616c6f/
 }
