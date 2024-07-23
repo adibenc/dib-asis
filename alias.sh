@@ -235,6 +235,7 @@ alias dev="dev1"
 alias ai="xBook $__secret/ai"
 alias tmx="xBook $__secret/scttmux"
 alias adbs="xBook $__secret/adbs"
+alias amix="xBook $__secret/amix"
 
 # devops
 # leet yoo
