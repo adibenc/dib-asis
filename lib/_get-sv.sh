@@ -10,13 +10,14 @@ minor=5 # number of main features / modules
 
 appname=app-name
 shorthead=$(git rev-parse --short HEAD)
-source $PWD/mm.sh # override major & minor
 
 git log > dmy-git-log
 # patch count by commit count
 patch=$(grep -in "    " dmy-git-log | grep -v "Merge" | wc -l)
 
-if [ $1 -eq "1" ];then
+source $PWD/mm.sh # override major & minor
+
+if [ $1 = "1" ];then
 	echo "semver: $appname"
 fi
 echo "$major.$minor.$patch $shorthead"

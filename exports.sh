@@ -13,6 +13,7 @@ export PATH="$PATH:/media/data3/flutter/bin\
 # :/media/data3/binsrc/4linux/node-v14.15.4-linux-x64/bin
 export PATH="./../../vendor/bin:./vendor/bin:$PATH"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+export PATH="$PATH:/media/data1/bins/4linux/"
 
 export ANDROID_HOME="/media/data2/links/Android/Sdk"
 export GOPATH="$HOME/go"

@@ -54,7 +54,7 @@ alias dex2jar="/media/data3/play/tools/revxbinexp/dex2jar-2.0/d2j-dex2jar.sh"
 alias cutter="/media/data3/play/tools/revxbinexp/Cutter-v1.12.0-x64.Linux.AppImage"
 # alias composer="/usr/local/bin/composer"
 # alias composer="php ~/dib-asis/lib/composer.phar"
-alias typora="/media/data1/bins/4linux/Typora-linux-x64/bin/Typora-linux-x64/Typora"
+# alias typora="/media/data1/bins/4linux/Typora-linux-x64/bin/Typora-linux-x64/Typora"
 alias yed="java -jar /media/data3/binsrc/yEd-3.19.1.1/yed-3.19.1.1/yed.jar"
 #jars
 alias stman="/media/data1/project1/ssh-tunnel-manager/ssh-tunnel-manager.sh"
@@ -212,6 +212,29 @@ function jwtd() {
          jq -R 'split(".") | .[0],.[1] | @base64d | fromjson' <<< "${1}"
          echo "Signature: $(echo "${1}" | awk -F'.' '{print $3}')"
     fi
+}
+
+tmx-killall(){
+	while true;do tmux kill-session;echo kill;sleep 1;done
+}
+
+# dg1 mail.sysindo.com
+# dg1 sysindo.com
+dg1(){
+	url=$1
+	dig a $url
+	dig mx $url
+	dig txt $url
+}
+
+git-sync-d1(){
+	git checkout dev
+	git merge prod
+}
+
+git-sync-p1(){
+	git checkout prod
+	git merge dev
 }
 
 alias sync-ci4="$__dir/lib/_sync-ci4.sh"
