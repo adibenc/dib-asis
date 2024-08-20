@@ -28,6 +28,7 @@ source $__dir/secret.sh
 source $__dir/exports.sh
 
 #libs
+source $__lib/ai.sh
 source $__lib/dpkg-backup.sh
 source $__lib/banner.sh
 source $__lib/sl.sh
