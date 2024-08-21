@@ -14,6 +14,7 @@ export PATH="$PATH:/media/data3/flutter/bin\
 export PATH="./../../vendor/bin:./vendor/bin:$PATH"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$PATH:/media/data1/bins/4linux/"
+export PATH="$PATH:/media/data1/project1/telegram-export-converter"
 
 export ANDROID_HOME="/media/data2/links/Android/Sdk"
 export GOPATH="$HOME/go"
