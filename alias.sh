@@ -265,8 +265,9 @@ alias amix="xBook $__secret/amix"
 for i in $(seq 0 10);do
 	alias kb$i="xBook $__secret/kbs/kb$i"
 done;
-alias kubectl="minikube kubectl --"
+# alias kubectl="minikube kubectl --"
 alias abx="xBook $__secret/abx"
+alias bak="xBook $__secret/bak"
 
 # utils
 alias db="xBook $__secret/db"

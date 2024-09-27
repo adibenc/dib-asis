@@ -31,6 +31,9 @@ export JRE=/usr/lib/jvm/java-18-openjdk-amd64/
 export PATH=$PATH:$JRE:$JDK_HOME:$JAVA_HOME/bin
 export PATH=$PATH:/media/data1/bins/4linux/node_exporter-1.8.1.linux-amd64/
 export PATH=$PATH:/media/data1/bins/4linux/prometheus-2.53.0-rc.1.linux-amd64/
+export PATH=$PATH:/media/data1/bins/4linux/goaccess-master/
+export PATH=$PATH:/media/data1/confidential/codes/utils/
+export PATH=$PATH:/media/data2/links/helm/
 
 # condas
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:/usr/local/cuda-11.4/lib64:/usr/lib/x86_64-linux-gnu/:/usr/local/cuda-11.1/targets/x86_64-linux/lib/
