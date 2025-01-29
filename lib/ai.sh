@@ -7,6 +7,6 @@
 # llm -m gemini-1.5-flash-latest 'explain ttx'
 llm-gm1(){
 	quest=$1
-	llm -m gemini-1.5-flash-latest $quest
+	llm -m gemini-1.5-flash-latest --key $GEMINI_API_KEY $quest
 }
 

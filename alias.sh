@@ -33,6 +33,8 @@ __da_m2="/media/data2/"
 __da_cx="/media/data1/confidential"
 
 # override / make nickname sys binaries
+
+alias code="code --user-data-dir ~/.config/Code/"
 # alias cps="/usr/bin/composer"
 alias mysql="/opt/lampp/bin/mysql"
 alias mysqldump="/opt/lampp/bin/mysqldump"
@@ -288,6 +290,7 @@ alias sdd="xBook $__secret/secretSnipBm1"
 alias stat1="xBook $__secret/secretstatBm"
 alias dib="xBook $__secret/secretDibBm"
 alias codes="xBook $__secret/codes"
+alias rsys="xBook $__secret/rsyncs"
 alias app="xBook $__secret/app"
 alias medias="xBook $__secret/medias"
 alias mapid="cat $__dir/lib/id"
@@ -315,7 +318,7 @@ alias ida6="cd /media/data2/IDA\ 6.6 && winefile"
 alias drand="python -c \"import random;print(random.randint(1,100))\""
 alias phpunit="./../../vendor/bin/phpunit"
 alias sshkey="ssh-keygen"
-alias installthemes="git clone https://github.com/Gogh-Co/Gogh.git gogh"
+alias install-themes="git clone https://github.com/Gogh-Co/Gogh.git gogh"
 
 #set ssh client timout
 #/etc/ssh/ssh_config and set directive ServerAliveInterval to a value like 100:

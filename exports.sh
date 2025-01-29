@@ -15,6 +15,7 @@ export PATH="./../../vendor/bin:./vendor/bin:$PATH"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$PATH:/media/data1/bins/4linux/"
 export PATH="$PATH:/media/data1/project1/telegram-export-converter"
+export PATH="$PATH:/opt/lampp/bin/"
 
 export ANDROID_HOME="/media/data2/links/Android/Sdk"
 export GOPATH="$HOME/go"
@@ -46,3 +47,7 @@ export PYTHONDONTWRITEBYTECODE=1
 export FLASK_DEBUG=development
 
 export BASEDIR='/media/data1/_S2/'
+export SHELL_DEBUG=all
+
+#beware of this env, it could messes up all the gnome apps
+#export XDG_CONFIG_HOME="~/.config/"
