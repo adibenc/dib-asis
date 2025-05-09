@@ -239,6 +239,18 @@ git-sync-p1(){
 	git merge dev
 }
 
+ext-proc(){
+	ps aux --sort -%mem | paste -d ' ' > running_processes.csv
+}
+
+omm(){
+	while true;do docker logs -f --tail 100 o-web;sleep 1;done
+}
+
+rlog(){
+	echo > odoo-web-data/log
+}
+
 alias sync-ci4="$__dir/lib/_sync-ci4.sh"
 #initConda
 

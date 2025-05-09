@@ -36,3 +36,7 @@ llm-dscoder(){
 	llm -m deepseek-coder --key $DEEPSEEK_API_KEY $quest
 }
 
+llm-gmx(){
+	dx=$(date +%Y%m%d-%H%M%S)
+	printf "%s" "$x" | llm-gm1 | tee gm1-$dx.md
+}
