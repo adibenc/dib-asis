@@ -40,3 +40,34 @@ llm-gmx(){
 	dx=$(date +%Y%m%d-%H%M%S)
 	printf "%s" "$x" | llm-gm1 | tee gm1-$dx.md
 }
+
+llm-gmc(){
+	dx=$(date +%Y%m%d-%H%M%S)
+	printf "%s" "$x" | llm-gm1 -c | tee gm1-$dx.md
+}
+
+llm-gmch(){
+	llm chat -m gemini-1.5-flash-latest --key $GEMINI_API_KEY
+}
+
+vimx(){
+	vim ~/x
+	x=$(cat ~/x)
+}
+
+vimxr(){
+	echo > ~/x
+	vim ~/x
+	x=$(cat ~/x)
+}
+
+vimxsh(){
+	vim ~/x.sh
+	source ~/x.sh
+}
+
+vimxshr(){
+	echo > ~/x.sh
+	vim ~/x.sh
+	source ~/x.sh
+}
