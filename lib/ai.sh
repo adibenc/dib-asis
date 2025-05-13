@@ -47,7 +47,7 @@ llm-gmc(){
 }
 
 llm-gmch(){
-	llm chat -m gemini-1.5-flash-latest --key $GEMINI_API_KEY
+	llm chat -m gemini-1.5-flash-latest --key $GEMINI_API_KEY -c
 }
 
 vimx(){
