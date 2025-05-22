@@ -190,3 +190,22 @@ mkmd(){
 	dx=$(date +%Y-%m-%d)
 	touch $dx-$1.md
 }
+
+# mkirma `pwd`
+mkirma(){
+    current_dir=$(pwd)
+    last_dir="${current_dir##*/}"
+
+    module="$last_dir"
+    model="$1"
+    echo "access_${module}_${model},${module}.${model},model_${module}_${model},base.group_user,1,1,1,1"
+}
+
+res-sync(){
+	rsync -a --no-perms --no-owner --no-group -logtD --info=progress2 $DRES_SRC $DRES_TMP
+	rsync -a -logt --info=progress2 $DRES_TMP $DRES_DST
+}
+
+tkill(){
+	while true;do tmux kill-session;sleep 1;done
+}
