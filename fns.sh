@@ -2,57 +2,57 @@
 
 
 #functions / oneliner
-function random(){
+random(){
 	tr -cd \"[:digit:]\" < /dev/urandom | head -c 16
 }
 
-function randint(){
+randint(){
 	echo $(($(random) % $1))
 }
 
-function fileline(){
+fileline(){
 	cat $1 | head -n $2 | tail -n 1
 }
 
-function linerange(){
+linerange(){
 	cat $1 | head -$2 | tail +$3
 }
 
-function getTodo(){
+getTodo(){
 	for i in $(find .) ; do echo $i; cat $i | grep -in "to do" ; done;
 }
 
-function getFuncs(){
-	for i in $(find .) ; do echo $i; cat $i | grep -in function ; done;
+getFuncs(){
+	for i in $(find .) ; do echo $i; cat $i | grep -in ; done;
 }
 
-function getCiFuncs(){
-	for i in $(find .) ; do echo $i; cat $i | grep -in function | grep -i "controllers\|model"; done;
+getCiFuncs(){
+	for i in $(find .) ; do echo $i; cat $i | grep -in | grep -i "controllers\|model"; done;
 }
 
-function getImplement(){
+getImplement(){
 	for i in $(find .) ; do echo $i; cat $i | grep -in implement ; done;
 }
 
-function gitgetchange(){
+gitgetchange(){
 	#cp to dummy then upload
 	git diff --name-only HEAD $1
 }
 
-function gitdummy(){
+gitdummy(){
 	#cp to dummy then upload
 	for i in $(cat $1);do mkdir -p "dummy/`dirname $i`"; cp -v $i dummy/$i; done
 }
 
 # 4 master
-function gsys(){
+gsys(){
 	git checkout staging
 	git merge master
 	git push
 	git checkout master
 }
 
-function gdys(){
+gdys(){
 	git checkout staging
 	git merge dev
 	git push
@@ -60,7 +60,7 @@ function gdys(){
 }
 
 # 4 main
-function gsym(){
+gsym(){
 	git checkout staging
 	git merge main
 	git push
@@ -71,7 +71,7 @@ function gsym(){
 # gmr main staging
 # dev to main 
 # gmr dev main
-function gmr(){
+gmr(){
 	git checkout $2
 	git merge $1
 	git push
@@ -79,7 +79,7 @@ function gmr(){
 }
 
 # cmds bookmark file access n run
-function xBook(){
+xBook(){
 	cat -n $1
 	# echo -ne "input >"
 	echo 
@@ -91,15 +91,26 @@ function xBook(){
 	$cmd1
 }
 
-# function hcd(){
+# hcd(){
 	
 # }
 
-function nmclis(){
+nmclis(){
 	nmcli device show wlp1s0
 }
 
-function baseStat(){
+sep(){
+	n=$1
+	python3 -c "print('='*$n)"
+}
+
+dsep(){
+	n=$1
+	dx=$(date +%Y-%m-%d)
+	echo -ne "$dx "; sep $n
+}
+
+baseStat(){
 	echo "================================================================"
 	logfile=$1
 	echo $logfile
@@ -108,11 +119,11 @@ function baseStat(){
 	#return logfile
 }
 
-function findx(){
+findx(){
 	echo "for f in \$\(find); do baseStat $f;done"
 }
 
-function initConda(){
+initConda(){
 __conda_setup="$('/home/zam/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
@@ -126,7 +137,7 @@ fi
 unset __conda_setup
 }
 
-function initMconda(){
+initMconda(){
 	# >>> conda initialize >>>
 	# !! Contents within this block are managed by 'conda init' !!
 	__conda_setup="$('/home/zam/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -144,7 +155,7 @@ function initMconda(){
 }
 
 # https://prefetch.net/blog/2020/07/14/decoding-json-web-tokens-jwts-from-the-linux-command-line/
-function jwtd() {
+jwtd() {
     if [[ -x $(command -v jq) ]]; then
          jq -R 'split(".") | .[0],.[1] | @base64d | fromjson' <<< "${1}"
          echo "Signature: $(echo "${1}" | awk -F'.' '{print $3}')"
@@ -184,6 +195,7 @@ omm(){
 
 rlog(){
 	echo > odoo-web-data/log
+	echo > app/logs/main.log
 }
 
 mkmd(){
@@ -208,4 +220,67 @@ res-sync(){
 
 tkill(){
 	while true;do tmux kill-session;sleep 1;done
+}
+
+sy-tool(){
+	find . -type f -exec mv {} . \;
+}
+
+xmd(){
+	dx=$(date +%Y%m%d-%H%M%S)
+	strip-tags | tee xmd-$dx.md
+}
+
+xcurl(){
+	url=$1
+	dx=$(date +%Y%m%d-%H%M%S)
+	curl $url | xmd
+}
+
+# extract_notes file
+extract_notes() {
+	local input="$1"
+	local base="${input%.*}"
+	local mono_wav="${base}_mono.wav"
+	local pitch_txt="${base}_pitch.txt"
+
+	# Step 1: Convert to mono WAV with 16kHz sampling rate
+	echo "Converting to mono, 16kHz WAV..."
+	ffmpeg -y -i "$input" -ac 1 -ar 16000 "$mono_wav"
+
+	# Step 2: Extract pitch using aubio
+	echo "Extracting pitch with aubio..."
+	aubio pitch "$mono_wav" > "$pitch_txt"
+
+	echo "Pitch extraction complete. Output saved to: $pitch_txt"
+}
+
+midi_to_mp3() {
+	local midi_file="$1"
+	local out_file="${2:-${midi_file%.mid}.mp3}"
+	local wav_file="${midi_file%.mid}.wav"
+	local soundfont="${3:-/usr/share/sounds/sf2/FluidR3_GM.sf2}"
+
+	if [[ ! -f "$midi_file" ]]; then
+		echo "❌ MIDI file not found: $midi_file"
+		return 1
+	fi
+
+	if [[ ! -f "$soundfont" ]]; then
+		echo "❌ SoundFont not found: $soundfont"
+		return 1
+	fi
+
+	echo "🎹 Converting $midi_file to WAV..."
+	fluidsynth -ni "$soundfont" "$midi_file" -F "$wav_file" -r 44100
+
+	echo "🎧 Encoding to MP3..."
+	ffmpeg -y -i "$wav_file" -codec:a libmp3lame -qscale:a 2 "$out_file"
+
+	echo "✅ Saved: $out_file"
+}
+
+fcco(){
+	dx=$(date +%Y%m%d-%H%M%S)
+	fo=$dx-cur.log;for f in $(find -type f);do echo >> $fo; echo $f >> $fo;echo >> $fo;cat $f >>$fo;done
 }
