@@ -226,8 +226,11 @@ sy-tool(){
 	find . -type f -exec mv {} . \;
 }
 
+# xtended flatted html n family to pure plain text md
 xmd(){
 	dx=$(date +%Y%m%d-%H%M%S)
+	f=$1
+	# cat $f | strip-tags | tee xmd-$dx.md
 	strip-tags | tee xmd-$dx.md
 }
 
@@ -280,7 +283,18 @@ midi_to_mp3() {
 	echo "✅ Saved: $out_file"
 }
 
-fcco(){
+fcco() {
 	dx=$(date +%Y%m%d-%H%M%S)
-	fo=$dx-cur.log;for f in $(find -type f);do echo >> $fo; echo $f >> $fo;echo >> $fo;cat $f >>$fo;done
+	fo="$dx-cur.log"
+	for f in $(find -type f); do
+		echo >> "$fo"
+		echo "$f" >> "$fo"
+		echo "Modified: $(stat -c %y "$f")" >> "$fo"
+		echo >> "$fo"
+		cat "$f" >> "$fo"
+	done
+}
+
+lo-pdf(){
+	libreoffice --headless --convert-to pdf $1
 }

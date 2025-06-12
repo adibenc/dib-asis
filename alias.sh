@@ -73,6 +73,7 @@ alias sync-ci4="$__dir/lib/_sync-ci4.sh"
 
 __secret=$__dir"/secrets"
 #bookmark
+alias dwip="xBook $__secret/dwip"
 alias dcd="xBook $__secret/dirBm"
 alias dcd2="xBook $__secret/dirBm2"
 alias dvc="xBook $__secret/dirBmVc"
