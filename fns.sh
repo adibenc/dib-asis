@@ -196,6 +196,11 @@ omm(){
 rlog(){
 	echo > odoo-web-data/log
 	echo > app/logs/main.log
+	echo > application/logs/general.log
+}
+
+trlog(){
+	truncate -s 0 var/log/nginx/*.log
 }
 
 mkmd(){
