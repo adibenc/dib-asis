@@ -194,18 +194,27 @@ omm(){
 }
 
 rlog(){
-	echo > odoo-web-data/log
-	echo > app/logs/main.log
-	echo > application/logs/general.log
+	truncate -s 0 odoo-web-data/log
+	truncate -s 0 app/logs/main.log
+	truncate -s 0 application/logs/general.log
+	truncate -s 0 storage/logs/access.log
+	truncate -s 0 storage/logs/laravel.log
 }
 
 trlog(){
 	truncate -s 0 var/log/nginx/*.log
+	truncate -s 0 writable/logs/*.log
+	truncate -s 0 storage/logs/laravel.log
 }
 
 mkmd(){
 	dx=$(date +%Y-%m-%d)
 	touch $dx-$1.md
+}
+
+mkdmy(){
+	dx=$(date +%Y-%m-%d)
+	touch dmy-$dx-$1.md
 }
 
 # mkirma `pwd`
@@ -236,7 +245,14 @@ xmd(){
 	dx=$(date +%Y%m%d-%H%M%S)
 	f=$1
 	# cat $f | strip-tags | tee xmd-$dx.md
-	strip-tags | tee xmd-$dx.md
+	strip-tags | sed -f ~/dib-asis/lib/seds/s1 | tee xmd-$dx.md
+}
+
+xmdt(){
+	dx=$(date +%Y%m%d-%H%M%S)
+	f=$1
+	# cat $f | strip-tags | tee xmd-$dx.md
+	strip-tags | sed -f ~/dib-asis/lib/seds/s1 | tee xmd-$dx.md
 }
 
 xcurl(){
@@ -302,4 +318,113 @@ fcco() {
 
 lo-pdf(){
 	libreoffice --headless --convert-to pdf $1
+}
+
+pa-clear(){
+	php artisan config:clear
+	php artisan cache:clear
+	php artisan route:clear # if it's a route-related issue
+	php artisan view:clear  # if it's a view-related issue
+}
+
+#!/bin/bash
+
+# Function to get the sink input ID for a given application name
+get_app_sink_id() {
+    local app_name="$1"
+    pactl list sink-inputs | awk -v app="$app_name" '
+    /Sink Input #/ { current_id = $3 }
+    /application.name =/ {
+        gsub(/"/, "", $3); # Remove quotes
+        if ($3 == app) {
+            print current_id;
+            exit;
+        }
+    }'
+}
+
+# read files recursively and put into a var
+# sample: x=$(readrx)
+readrx() {
+  local src_dir="$1"
+
+  find "$src_dir" -type f | while read -r file; do
+    if file --mime "$file" | grep -q text/; then
+      echo ">>> $file"
+      cat "$file"
+      echo
+    fi
+  done
+}
+
+
+# Usage:
+# set_app_volume "Firefox" "50%"
+# set_app_volume "mpv" "+10%"
+set_app_volume() {
+    local app_name="$1"
+    local volume="$2"
+    local sink_id=$(get_app_sink_id "$app_name")
+
+    if [ -n "$sink_id" ]; then
+        echo "Setting volume for '$app_name' (Sink ID: $sink_id) to $volume..."
+        pactl set-sink-input-volume "$sink_id" "$volume"
+    else
+        echo "Error: Application '$app_name' not found or not playing audio."
+    fi
+}
+
+# Example usage:
+# Adjust Firefox volume to 50%
+# set_app_volume "Firefox" "50%"
+
+# Increase mpv volume by 5%
+# set_app_volume "mpv" "+5%"
+
+# Mute Spotify
+# To mute, you'd need a separate function as pactl set-sink-input-mute is different
+# set_app_mute() {
+#     local app_name="$1"
+#     local action="$2" # "toggle", "1" (mute), "0" (unmute)
+#     local sink_id=$(get_app_sink_id "$app_name")
+#
+#     if [ -n "$sink_id" ]; then
+#         echo "Setting mute status for '$app_name' (Sink ID: $sink_id) to $action..."
+#         pactl set-sink-input-mute "$sink_id" "$action"
+#     else
+#         echo "Error: Application '$app_name' not found or not playing audio."
+#     fi
+# }
+# set_app_mute "Spotify" "toggle"
+
+#!/usr/bin/env bash
+
+# sp2find file.md
+sp2find(){
+	# input_file="xmd-20250711-172549.md"
+	input_file=$1
+	# initialize stack
+	declare -a stack
+
+	while IFS= read -r line; do
+	# count leading tabs (real tabs, not spaces)
+	indent=$(echo "$line" | sed -E 's/^(\t*).*/\1/' | awk '{ print length }')
+
+	# extract the actual name (remove tabs/spaces from start)
+	name=$(echo "$line" | sed 's/^[[:space:]]*//')
+
+	[[ -z "$name" ]] && continue
+
+	# update path stack
+	stack[$indent]="$name"
+
+	# clear deeper levels
+	for ((i=indent+1; i<${#stack[@]}; i++)); do
+		unset "stack[i]"
+	done
+
+	# join parts
+	printf "./%s\n" "$(IFS=/; echo "${stack[*]}")"
+
+	done < "$input_file"
 }
