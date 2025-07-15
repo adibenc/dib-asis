@@ -207,6 +207,10 @@ trlog(){
 	truncate -s 0 storage/logs/laravel.log
 }
 
+rmdist(){
+	find app -type d -name dist -exec rm -rf {} +
+}
+
 mkmd(){
 	dx=$(date +%Y-%m-%d)
 	touch $dx-$1.md
