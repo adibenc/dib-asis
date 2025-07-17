@@ -259,6 +259,35 @@ xmdt(){
 	strip-tags | sed -f ~/dib-asis/lib/seds/s1 | tee xmd-$dx.md
 }
 
+xtr-ejp(){
+	t=$1
+	dx=$(date +%Y%m%d-%H%M%S)
+	IFS=$'\n'
+
+	file="$DR_JP_PRAC/xmd-$t.md"
+	if [[ -f "$file" ]]; then
+		echo $file
+		cat "$file"
+	else
+		# trans :$1 "$word" | tee "$file"
+		trans en:jpn "$t" | tee $file
+	fi
+}
+
+xtr-jpe(){
+	t=$1
+	dx=$(date +%Y%m%d-%H%M%S)
+	
+	file="$DR_JP_PRAC/xmd-$t.md"
+	if [[ -f "$file" ]]; then
+		echo $file
+		cat "$file"
+	else
+		# trans :$1 "$word" | tee "$file"
+		trans en:jpn "$t" | tee $file
+	fi
+}
+
 xcurl(){
 	url=$1
 	dx=$(date +%Y%m%d-%H%M%S)
