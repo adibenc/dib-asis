@@ -264,7 +264,7 @@ xtr-ejp(){
 	dx=$(date +%Y%m%d-%H%M%S)
 	IFS=$'\n'
 
-	file="$DR_JP_PRAC/xmd-$t.md"
+	file="$DR_JP_PRAC/ejp-xmd-$t.md"
 	if [[ -f "$file" ]]; then
 		echo $file
 		cat "$file"
@@ -278,7 +278,7 @@ xtr-jpe(){
 	t=$1
 	dx=$(date +%Y%m%d-%H%M%S)
 	
-	file="$DR_JP_PRAC/xmd-$t.md"
+	file="$DR_JP_PRAC/jpe-xmd-$t.md"
 	if [[ -f "$file" ]]; then
 		echo $file
 		cat "$file"
@@ -460,4 +460,16 @@ sp2find(){
 	printf "./%s\n" "$(IFS=/; echo "${stack[*]}")"
 
 	done < "$input_file"
+}
+
+llog(){
+	code writable/logs/`ls -1ht writable/logs/ | head -n 1`
+}
+
+hg(){
+	history | grep $1
+}
+
+bsback(){
+	$BS_BACK
 }
