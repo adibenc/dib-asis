@@ -6,8 +6,12 @@
 
 # llm -m gemini-1.5-flash-latest 'explain ttx'
 llm-gm1(){
+	# wip fix
 	quest=$1
-	llm -m gemini-1.5-flash-latest --key $GEMINI_API_KEY $quest
+	# llm -m gemini-1.5-flash-latest --key $GEMINI_API_KEY $quest
+	# llm -m gemini-1.5-flash-latest --key $GEMINI_API_KEY $quest
+	llm -m gemini-2.0-flash --key $GEMINI_API_KEY $quest
+	# llm -m gemini-2.0-flash-001 --key $GEMINI_API_KEY $quest
 }
 
 llm-ds(){
