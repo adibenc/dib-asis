@@ -16,7 +16,11 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$PATH:/media/data1/bins/4linux/"
 export PATH="$PATH:/media/data1/project1/telegram-export-converter"
 export PATH="$PATH:/opt/lampp/bin/"
+export PATH="$PATH:/media/data2/links/flutter/bin/"
+export PATH="$PATH:/media/data2/links/Android/Sdk/cmdline-tools/latest/bin/"
 
+# ANDROID_SDK_ROOT
+# /media/data2/links/Android/Sdk/cmdline-tools/latest/bin/
 export ANDROID_HOME="/media/data2/links/Android/Sdk"
 export GOPATH="$HOME/go"
 
