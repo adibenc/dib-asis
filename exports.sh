@@ -27,9 +27,18 @@ export GOPATH="$HOME/go"
 # override previous java
 # export JAVA_HOME=/media/data1/bins/4linux/jdk-11
 export AD_HOME=/media/data2/links/android-studio/bin/
-export JAVA_HOME=/usr/lib/jvm/java-18-openjdk-amd64/
-export JDK_HOME=/usr/lib/jvm/java-18-openjdk-amd64/
-export JRE=/usr/lib/jvm/java-18-openjdk-amd64/
+
+# /media/data2/links/jdk-18/
+# java 18
+export JAVA_HOME=/media/data2/links/jdk-18/
+export JDK_HOME=/media/data2/links/jdk-18/
+export JRE=/media/data2/links/jdk-18/
+
+# java 21
+# export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64/
+# export JDK_HOME=/usr/lib/jvm/java-21-openjdk-amd64/
+# export JRE=/usr/lib/jvm/java-21-openjdk-amd64/
+
 # export JAVA_HOME=
 # export JDK_HOME=
 # export JRE=

@@ -39,6 +39,10 @@ gitgetchange(){
 	git diff --name-only HEAD $1
 }
 
+ggc(){
+	gitgetchange $1
+}
+
 gitdummy(){
 	#cp to dummy then upload
 	for i in $(cat $1);do mkdir -p "dummy/`dirname $i`"; cp -v $i dummy/$i; done
@@ -472,4 +476,13 @@ hg(){
 
 bsback(){
 	$BS_BACK
+}
+
+# log truncator
+trl(){
+	while true;do date;rlog;sleep 2;done
+}
+
+pxrs(){
+	unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY
 }

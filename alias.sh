@@ -91,6 +91,7 @@ alias ai="xBook $__secret/ai"
 alias tmx="xBook $__secret/scttmux"
 alias adbs="xBook $__secret/adbs"
 alias amix="xBook $__secret/amix"
+alias asx="xBook $__secret/asx"
 alias cdx="xBook $__secret/cdxs"
 
 # devops

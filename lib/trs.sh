@@ -14,6 +14,14 @@ etrans-en() {
   fi
 }
 
+eten(){
+  etrans-en $1
+}
+
+etenid(){
+  trans en:id "$1"
+}
+
 etrans-la() {
   local wdir=$2
   local word=$3
