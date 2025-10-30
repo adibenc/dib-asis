@@ -35,6 +35,7 @@ source $__lib/sl.sh
 source $__lib/_builder.sh
 source $__lib/_sync1.sh
 source $__lib/trs.sh
+source $__lib/ff1.sh
 
 #mapid
 dib-banner
