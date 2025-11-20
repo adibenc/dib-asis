@@ -43,3 +43,8 @@ etrans-id(){
 etrans-jp(){
   etrans-la jpn $DR_ID_WORDS $1
 }
+
+etrans-zh(){
+	# trans zh:en 国有企业
+	etrans-la zh:en $DR_ZH_WORDS $1
+}
