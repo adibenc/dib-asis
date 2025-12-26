@@ -4,13 +4,28 @@
 #   | ttok -t 4000 \
 #   | llm --system 'summary bullet points'
 
+cl-dsp(){
+	claude --dangerously-skip-permissions
+}
+
 # llm -m gemini-1.5-flash-latest 'explain ttx'
 llm-gm1(){
 	# wip fix
 	quest=$1
 	# llm -m gemini-1.5-flash-latest --key $GEMINI_API_KEY $quest
 	# llm -m gemini-1.5-flash-latest --key $GEMINI_API_KEY $quest
-	llm -m gemini-2.0-flash --key $GEMINI_API_KEY $quest
+	# llm -m gemini-2.0-flash --key $GEMINI_API_KEY $quest
+	llm -m gemini-flash-latest --key $GEMINI_API_KEY $quest
+	# llm -m gemini-2.0-flash-001 --key $GEMINI_API_KEY $quest
+}
+
+llm-an1(){
+	# wip fix
+	quest=$1
+	# llm -m gemini-1.5-flash-latest --key $GEMINI_API_KEY $quest
+	# llm -m gemini-1.5-flash-latest --key $GEMINI_API_KEY $quest
+	# llm -m gemini-2.0-flash --key $GEMINI_API_KEY $quest
+	llm -m claude-sonnet-4.5 --key $ANT_API_KEY $quest
 	# llm -m gemini-2.0-flash-001 --key $GEMINI_API_KEY $quest
 }
 
@@ -43,6 +58,11 @@ llm-dscoder(){
 llm-gmx(){
 	dx=$(date +%Y%m%d-%H%M%S)
 	printf "%s" "$x" | llm-gm1 | tee gm1-$dx.md
+}
+
+llm-anx(){
+	dx=$(date +%Y%m%d-%H%M%S)
+	printf "%s" "$x" | llm-an1 | tee an1-$dx.md
 }
 
 llm-gmc(){

@@ -248,6 +248,7 @@ sy-tool(){
 	find . -type f -exec mv {} . \;
 }
 
+# flag
 # xtended flatted html n family to pure plain text md
 xmd(){
 	dx=$(date +%Y%m%d-%H%M%S)
