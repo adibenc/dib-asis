@@ -487,3 +487,11 @@ trl(){
 pxrs(){
 	unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY
 }
+
+stl1(){
+	for e in $(cat /media/data1/project1/node-aio/dmy/ems1);do echo $e; curl "localhost:8080/api/f/t/x/aio1?format=cli&em=$e" | less ;done
+}
+
+st-aio(){
+	curl "localhost:8080/api/f/t/x/aio1?format=cli&em=$1"
+}
