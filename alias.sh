@@ -97,7 +97,10 @@ alias mgx="xBook $__secret/mgx"
 alias inx="xBook $__secret/inx"
 alias tgx="xBook $__secret/tgx"
 alias tsx="xBook $__secret/tsx"
+alias tnx="xBook $__secret/tnx"
 alias cdx="xBook $__secret/cdxs"
+alias scx="xBook $__secret/scx"
+alias pox="xBook $__secret/pox"
 
 # devops
 # leet yoo
@@ -133,6 +136,7 @@ alias medias="xBook $__secret/medias"
 alias mapid="cat $__dir/lib/id"
 
 alias wiki="/media/data1/confidential/codes/wiki/w1.py"
+alias xmp="xmodmap ~/.xmodprint"
 alias get-sv="$__lib/_get-sv.sh"
 #alias stat1="baseStat"
 

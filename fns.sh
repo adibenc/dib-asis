@@ -220,6 +220,11 @@ mkmd(){
 	touch $dx-$1.md
 }
 
+mkmdc(){
+	mkmd $1
+	code $(ls -t1 | head -n 1)
+}
+
 mkdmy(){
 	dx=$(date +%Y-%m-%d)
 	touch dmy-$dx-$1.md
@@ -494,4 +499,37 @@ stl1(){
 
 st-aio(){
 	curl "localhost:8080/api/f/t/x/aio1?format=cli&em=$1"
+}
+
+lth(){
+	ls -t | head
+}
+
+pdf-split() {
+    local input=""
+    local parts=2
+
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            -p) parts=$2; shift 2 ;;
+            *)  input=$1; shift ;;
+        esac
+    done
+
+    if [[ -z "$input" ]]; then
+        echo "Usage: pdf-split <file.pdf> -p <num_parts>"
+        return 1
+    fi
+
+    local total=$(pdfinfo "$input" | grep Pages | awk '{print $2}')
+    local pages=$((total / parts))
+    local base="${input%.pdf}"
+
+    for i in $(seq 1 $parts); do
+        local start=$(( (i-1)*pages + 1 ))
+        local end=$((i * pages))
+        [[ $i -eq $parts ]] && end=$total
+        qpdf "$input" --pages . ${start}-${end} -- "${base}_part${i}.pdf"
+        echo "Created: ${base}_part${i}.pdf (pages $start-$end)"
+    done
 }
