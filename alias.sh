@@ -92,6 +92,7 @@ alias tmx="xBook $__secret/scttmux"
 alias adbs="xBook $__secret/adbs"
 alias amix="xBook $__secret/amix"
 alias asx="xBook $__secret/asx"
+alias pcx="xBook $__secret/pcx"
 alias asx1="xBook $__secret/asx1"
 alias mgx="xBook $__secret/mgx"
 alias inx="xBook $__secret/inx"
@@ -101,6 +102,7 @@ alias tnx="xBook $__secret/tnx"
 alias cdx="xBook $__secret/cdxs"
 alias scx="xBook $__secret/scx"
 alias pox="xBook $__secret/pox"
+alias stx="xBook $__secret/stx"
 
 # devops
 # leet yoo

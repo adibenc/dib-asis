@@ -533,3 +533,8 @@ pdf-split() {
         echo "Created: ${base}_part${i}.pdf (pages $start-$end)"
     done
 }
+
+# pr-perf ENRG 2025-01-02
+pr-perf() {
+	curl "localhost:8080/api/f/t/x/perf?symbol=$1&date=$2" | jq
+}
