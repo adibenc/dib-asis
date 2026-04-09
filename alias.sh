@@ -103,6 +103,7 @@ alias cdx="xBook $__secret/cdxs"
 alias scx="xBook $__secret/scx"
 alias pox="xBook $__secret/pox"
 alias stx="xBook $__secret/stx"
+alias fux="xBook $__secret/fux"
 
 # devops
 # leet yoo

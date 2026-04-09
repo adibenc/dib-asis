@@ -48,3 +48,8 @@ etrans-zh(){
 	# trans zh:en 国有企业
 	etrans-la zh:en $DR_ZH_WORDS $1
 }
+
+t2-enzh(){
+	# trans zh:en 国有企业
+	trans en:zh $1 | tee $DR_ZH_WORDS/$1.md
+}

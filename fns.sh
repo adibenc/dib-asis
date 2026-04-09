@@ -538,3 +538,15 @@ pdf-split() {
 pr-perf() {
 	curl "localhost:8080/api/f/t/x/perf?symbol=$1&date=$2" | jq
 }
+
+gatoday(){
+	git add -f $(date +%Y-%m-%d)*
+}
+
+pdf2txtx(){
+	f=$1
+	dst="$f.docx"
+	pdf2docx convert "'$f'" "'$dst'"
+	# ls -t | head
+	libreoffice --headless --convert-to txt $dst
+}
