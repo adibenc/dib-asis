@@ -550,3 +550,7 @@ pdf2txtx(){
 	# ls -t | head
 	libreoffice --headless --convert-to txt $dst
 }
+
+nar(){
+	systemctl --user restart node-aio
+}
