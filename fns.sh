@@ -203,6 +203,7 @@ rlog(){
 	truncate -s 0 application/logs/general.log
 	truncate -s 0 storage/logs/access.log
 	truncate -s 0 storage/logs/laravel.log
+	truncate -s 0 writable/logs/*.log
 }
 
 trlog(){
@@ -251,6 +252,11 @@ tkill(){
 
 sy-tool(){
 	find . -type f -exec mv {} . \;
+}
+
+stas(){
+	# f=$1
+	cat $f | strip-tags | sed -f ~/dib-asis/lib/seds/s1
 }
 
 # flag
@@ -553,4 +559,9 @@ pdf2txtx(){
 
 nar(){
 	systemctl --user restart node-aio
+}
+
+git-addr(){
+	# git remote set-url --add --push origin ssh://git@site.id:222/user/repo.git
+	git remote set-url --add --push origin $1
 }
