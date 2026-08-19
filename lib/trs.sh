@@ -10,7 +10,7 @@ etrans-en() {
     echo $file
     cat "$file"
   else
-    trans :en "$word" | tee "$file"
+    trans -x "$TRANS_PROXY" :en "$word" | tee "$file"
   fi
 }
 
@@ -19,7 +19,7 @@ eten(){
 }
 
 etenid(){
-  trans en:id "$1"
+  trans -x "$TRANS_PROXY" en:id "$1"
 }
 
 etrans-la() {
@@ -32,7 +32,7 @@ etrans-la() {
     echo $file
     cat "$file"
   else
-    trans :$1 "$word" | tee "$file"
+    trans -x "$TRANS_PROXY" :$1 "$word" | tee "$file"
   fi
 }
 
@@ -51,5 +51,5 @@ etrans-zh(){
 
 t2-enzh(){
 	# trans zh:en 国有企业
-	trans en:zh $1 | tee $DR_ZH_WORDS/$1.md
+	trans -x "$TRANS_PROXY" en:zh $1 | tee $DR_ZH_WORDS/$1.md
 }

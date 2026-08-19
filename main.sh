@@ -37,6 +37,12 @@ source $__lib/_sync1.sh
 source $__lib/trs.sh
 source $__lib/ff1.sh
 
+# help command, gated by ENABLED=1 in .env
+__envfile=$__dir"/.env"
+if [ -f "$__envfile" ] && grep -q "^ENABLED=1$" "$__envfile"; then
+	source $__lib/help.sh
+fi
+
 #mapid
 dib-banner
 

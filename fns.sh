@@ -565,3 +565,55 @@ git-addr(){
 	# git remote set-url --add --push origin ssh://git@site.id:222/user/repo.git
 	git remote set-url --add --push origin $1
 }
+
+gc-sb(){
+	google-chrome stockbit.com
+}
+
+# tg: attach to a tmux pane whose cwd matches a substring (most-recently-active session wins on
+# ties), or create one there if none exists. e.g. `tg node-aio`.
+tg() {
+	local target="$1"
+	if [ -z "$target" ]; then echo "usage: tg <dir-substring>"; return 1; fi
+
+	if ! tmux list-sessions >/dev/null 2>&1; then
+		echo "no tmux server running, starting one at best-guess dir"
+	fi
+
+	local matches
+	matches=$(tmux list-panes -a -F "#{session_name} #{window_index}.#{pane_index} #{pane_current_path}" 2>/dev/null \
+		| awk -v t="$target" '$3 ~ ("/" t "([/ ]|$)")')
+
+	if [ -z "$matches" ]; then
+		local dir
+		dir=$(find /media/data1/project1 -maxdepth 4 -type d -iname "$target" 2>/dev/null | head -1)
+		if [ -z "$dir" ]; then echo "no pane and no dir found for '$target'"; return 1; fi
+		local sess="tg-$target"
+		tmux new-session -d -s "$sess" -c "$dir" 2>/dev/null
+		if [ -n "$TMUX" ]; then tmux switch-client -t "$sess"; else tmux attach-session -t "$sess"; fi
+		return
+	fi
+
+	# single match, or pick by most-recently-active session (client_activity)
+	local best_sess best_win best_ts=-1
+	while read -r sess winpane path; do
+		local ts
+		ts=$(tmux list-clients -t "$sess" -F "#{client_activity}" 2>/dev/null | sort -rn | head -1)
+		ts=${ts:-0}
+		if [ "$ts" -ge "$best_ts" ]; then
+			best_ts=$ts; best_sess=$sess; best_win=$winpane
+		fi
+	done <<< "$matches"
+
+	if [ -n "$TMUX" ]; then
+		tmux switch-client -t "$best_sess"
+	else
+		tmux attach-session -t "$best_sess"
+	fi
+	tmux select-window -t "$best_sess:${best_win%%.*}"
+	tmux select-pane -t "$best_sess:$best_win"
+}
+
+tmx-kill(){
+	while true;do tmux kill-session;echo kill;sleep 1;done
+}

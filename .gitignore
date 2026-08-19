@@ -3,3 +3,4 @@ __pycache__/
 *[Dd]ummy*
 *[Dd]my*
 mm.sh
+.env
