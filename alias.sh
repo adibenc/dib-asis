@@ -29,6 +29,11 @@ alias dcn="curl https://dict.cn/$1 | head -n 200 | tail -n 100"
 alias gwp="grep -inr 'wip\|todo' . > ./dummy/_todo.md"
 alias upp="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
 
+# ms-hakkajiten template keyword search
+hkw() {
+    grep -rin --color=always "$1" /media/data1/project1/ms-hakkajiten/templates/
+}
+
 # dir aliases
 __proj="/media/data1/project1"
 __da_m1="/media/data1/"

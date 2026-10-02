@@ -507,6 +507,18 @@ st-aio(){
 	curl "localhost:8080/api/f/t/x/aio1?format=cli&em=$1"
 }
 
+# gserp <keyword...> — Google local/maps search via node-aio's SerpApi endpoint, saves to
+# serp_maps_results and prints the results. e.g. `gserp warteg tasikmadu`
+gserp(){
+	local kw="$*"
+	if [ -z "$kw" ]; then echo "usage: gserp <keyword...>"; return 1; fi
+
+	curl -s -X POST "localhost:8080/api/serp-maps/search" \
+		-H "Content-Type: application/json" \
+		-d "$(jq -n --arg q "$kw" '{query: $q}')" \
+	| jq '.data.results[] | {title, address, phone, website, rating, reviews, maps_url}'
+}
+
 lth(){
 	ls -t | head
 }
