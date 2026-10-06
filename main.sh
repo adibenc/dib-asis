@@ -6,7 +6,7 @@
 # include this to .bashrc
 # source ~/dib/main.sh
 
-echo "dib-bot init"
+# echo "dib-bot init"
 
 __dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 __file="${__dir}/$(basename "${BASH_SOURCE[0]}")"
@@ -36,6 +36,7 @@ source $__lib/_builder.sh
 source $__lib/_sync1.sh
 source $__lib/trs.sh
 source $__lib/ff1.sh
+source $__lib/bright.sh
 
 # help command, gated by ENABLED=1 in .env
 __envfile=$__dir"/.env"
@@ -44,9 +45,9 @@ if [ -f "$__envfile" ] && grep -q "^ENABLED=1$" "$__envfile"; then
 fi
 
 #mapid
-dib-banner
+# dib-banner
 
 GIT_UNSAFE_IGNORE_OWNERS=zam
 
-echo $separator
+# echo $separator
 #show-daily-zn
